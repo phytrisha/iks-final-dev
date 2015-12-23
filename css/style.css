@@ -1,0 +1,31 @@
+/* ------------------------------------------
+-- GENERAL VIEWS & OPTIONS ------------------
+------------------------------------------ */
+
+.viewContainer {
+	width: 2048px;
+	height: 1536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+}
+
+.mapView {
+	width: 1264px;
+	height: 1536px;
+	top: 0px;
+	left: 784px;
+	position: absolute;
+	background-color: #fff;
+}
+
+.sideBar {
+	width: 784px;
+	height: 1536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #7f7f7f;
+}
