@@ -27,12 +27,6 @@ Number.prototype.clamp = function(min, max) {
 function scale (elem, scaleValue) {
 	$(elem).css("-webkit-transform", "scale(" + scaleValue + ")");
 	finalScale = scaleValue;
-	/*if (valueX != undefined && valueY != undefined) {
-		$(elem).css("-webkit-transform", "translate(" + valueX + "px," + valueY + "px)");
-	}
-	$(elem).css("-webkit-transform", "scale(" + scaleValue + ")");
-	$(elem).css("-webkit-transform", "matrix(" + scaleValue + "0,0," + scaleValue + "," + valueX + "," + valueY + ")");
-	console.log($(elem).css("-webkit-transform", "matrix(" + scaleValue + "0,0," + scaleValue + "," + valueX + "," + valueY + ")"));*/
 }
 
 function appendTransform (elem, x, y) {
@@ -46,10 +40,10 @@ function getBounding (elem) {
 	var leftMin = parseInt($(elem).css("left"));
 	var topMin = parseInt($(elem).css("top"));
 	var values = [];
-	values[0] = leftMin; // left border = 0%
-	values[1] = topMin; // top border = 0%
-	values[2] = leftMin + parseInt($(elem).css("width")); // right border = 100%
-	values[3] = topMin + parseInt($(elem).css("height")); // bottom border = 100%
+	values[0] = leftMin;
+	values[1] = topMin;
+	values[2] = leftMin + parseInt($(elem).css("width"));
+	values[3] = topMin + parseInt($(elem).css("height"));
 	return values;
 }
 
@@ -114,33 +108,13 @@ function readyFn () {
 		if (scaling) {
 			resultScale = ev.scale;
 			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
-			//var values = getBounding("#mapElement");
-			//var scaleX = ev.center.x - center[0];
-			//var scaleY = ev.center.y - center[1];
-			//console.log(values[2] - values [0]);
-			/*var xCenter = ev.center.x /*+ values[0]) / (values[2] - values[0]);
-			xCenter = xCenter.map(values[0], values[2], 0, 100);
-			xCenter = xCenter.clamp(0,100);
-			var yCenter = ev.center.y;
-			yCenter = yCenter.map(values[1], values[3], 0, 100);
-			yCenter = yCenter.clamp(0,100);*/
-
-			//console.log(xCenter);
-			//console.log(yCenter);
-			//console.log(finalScale);
-			scale("#mapElement", resultScale/*, xCenter, yCenter*/);
-			//console.log(getCenter("#mapElement"));
-			//console.log(ev.center.x);
+			scale("#mapElement", resultScale);
 		}
 	})
 
 	mc.on("pinchend", function() {
 		bakeTransform("#mapElement", finalScale);
 		scaling = false;
-		if (scaling == false) {
-			//myElementScale = 1.0;
-		}
-		//$("#mapElement").css("-webkit-transform", "scale(1.0)");
 	})
 }
 
