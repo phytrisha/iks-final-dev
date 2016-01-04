@@ -5,6 +5,7 @@ var general = [];
 var descriptions = [];
 var rooms = [];
 var images = [];
+var targetSemester = [];
 
 var directions = [];
 
@@ -14,6 +15,7 @@ var originalFloor = 0;
 function getInfo (data) {
 	 for(var i = 0; i<data.length; i++) {
 		  selector[i] = data[i].studiengang + data[i].semester;
+		  targetSemester[i] = data[i].semester;
 		  general[i] = data[i].allgemein;
 		  titles[i] = data[i].kurse;
 		  descriptions[i] = data[i].kursBeschreibung;
@@ -58,24 +60,78 @@ function giveDirections (room) {
 	}
 }
 
-$(".semesterButton").click(function() {
+$(".programCell").click(function() {
+	$(".semesterSelector").html("");
+	var max = 8;
+	if (this.id == "sg") {
+		max = 4;
+	} else if (this.id == "iot") {
+		max = 2;
+	}
+	for (var i = 0; i < max; i++) {
+		if (i==0) {
+			$(".semesterSelector").append("<div class='semesterClick' id='" + this.id + i + "'><h1 class='horiCenter bold'>i</h1></div>");
+		} else if (i!=5) {
+			$(".semesterSelector").append("<div class='semesterClick' id='" + this.id + i + "'><h1 class='horiCenter bold'>" + i + "</h1></div>");
+		}
+	}
+	$(".contentView").addClass("active");
+	var selectorMargin = window.screen.width - (max/2) * parseInt($(".semesterClick").css("height"));
+	$(".semesterSelector").css("margin-top", selectorMargin + "px");
+	addClicks();
+	addContent(this.id + "0");
+})
+
+function addContent (id) {
 	for (var i = 0; i < selector.length; i++) {
-		if (selector[i] == this.id) {
+		if (selector[i] == id) {
 			var equalRoom = false;
-			$(".content").html("");
-			$(".content").append("<h1>" + this.id + "</h1>");
-			$(".content").append("<h2>" + general[i] + "</h2>");
-			$(".content").append("<div style='height:20px;'></div>");
+			var type = id.charAt(0) + id.charAt(1);
+			var fullName;
+			switch(type) {
+				case "ig":
+					fullName="Interaktionsgestaltung";
+					break;
+				case "kg":
+					fullName="Kommunikationsgestaltung";
+					break;
+				case "pg":
+					fullName="Produktgestaltung";
+					break;
+				case "io":
+					fullName="Internet der Dinge";
+					break;
+				case "sg":
+					fullName="Strategische Gestaltung";
+					break;
+			}
+			if (targetSemester[i] == "0") {
+				targetSemester[i] = "";
+			}
+			$("#currentLabel").html("<h1 class='" + type + "Color bold horiCenter'>" + type.toUpperCase() + "</h1>");
+			$("#currentProgram").html("<h1 class='bold'>" + fullName + " " + targetSemester[i] + "</h1>");
+
+			$(".semesterContent").html("");
+			$(".semesterContent").append("<p>" + general[i] + "</p>");
+			$(".semesterContent").append("<div style='height:60px;'></div>");
 			for (var j = 0; j < titles[i].length; j++) {
-				$(".content").append("<h2><b>Kurs: " + titles[i][j] + "</b></h2>");
-				$(".content").append("<h2>Raum: " + rooms[i][j] + "</h2>");
-				$(".content").append("<h2>Beschreibung: " + descriptions[i][j] + "</h2>");
+				$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
+				$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
+				$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
 				if (images[i][j] != "") {
-					$(".content").append("<img src='img/" + images[i][j] + "'>");
+					$(".semesterContent").append("<img src='img/" + images[i][j] + "'>");
 				}
-				giveDirections(rooms[i][j]);
-				$(".content").append("<div style='height:20px;'></div>");
+				//giveDirections(rooms[i][j]);
+				$(".semesterContent").append("<div style='height:60px;'></div>");
 			}
 		}
 	}
-})
+}
+
+function addClicks () {
+	$(".semesterClick").click(function() {
+		addContent(this.id);
+		$(".semesterClick").removeClass("active");
+		$(this).addClass("active");
+	})
+}
