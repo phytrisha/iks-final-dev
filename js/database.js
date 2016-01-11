@@ -61,6 +61,7 @@ function giveDirections (room) {
 }
 
 $(".programCell").click(function() {
+	activateCell(this);
 	$(".semesterSelector").html("");
 	var max = 8;
 	if (this.id == "sg") {
@@ -114,15 +115,17 @@ function addContent (id) {
 			$(".semesterContent").html("");
 			$(".semesterContent").append("<p>" + general[i] + "</p>");
 			$(".semesterContent").append("<div style='height:60px;'></div>");
-			for (var j = 0; j < titles[i].length; j++) {
-				$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
-				$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
-				$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
-				if (images[i][j] != "") {
-					$(".semesterContent").append("<img src='img/" + images[i][j] + "'>");
+			if (titles[i].length != undefined) {
+				for (var j = 0; j < titles[i].length; j++) {
+					$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
+					$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
+					$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
+					if (images[i][j] != "") {
+						$(".semesterContent").append("<img src='img/" + images[i][j] + "'>");
+					}
+					//giveDirections(rooms[i][j]);
+					$(".semesterContent").append("<div style='height:60px;'></div>");
 				}
-				//giveDirections(rooms[i][j]);
-				$(".semesterContent").append("<div style='height:60px;'></div>");
 			}
 		}
 	}

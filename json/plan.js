@@ -3,20 +3,20 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"0",
-		"allgemein":"Benutzerorientierte Gestaltung digitaler Systeme<br><br>Digitale Medien, Handys, Tablets und Laptops durchdringen heute den gesamten Alltag. Dadurch ist ein stetig wachsendes Arbeitsfeld entstanden – die Konzeption und Gestaltung interaktiver Produkte: Applikationen für digitale Geräte, interaktive Exponate und digitale Arbeits– und Wohnumgebungen."
+		"allgemein":"Der Bachelorstudiengang Interaktionsgestaltung befasst sich mit allen Apekten der Gestaltung interaktiver Informationssysteme und Benutzerschnittstellen. Zentral ist die Entwicklung von nutzerfreundlichem Technologieeinsatz. Gestaltet werden digitale Werkzeuge sowie Informations- und Kommunikationssysteme wie mobile Services oder mediale Installationen."
 	},
 	// --------------- Interaktionsgestaltung 1 ---------------
 	{
 		"studiengang":"ig",
 		"semester":"1",
-		"allgemein":"Grundlagen der Gestaltung I ist die Auseinandersetzung mit den elementaren gestalterischen Prozessen in statischen und dynamischen Medien, von einfachen Zeichenbeziehungen in der Fläche, bis hin zu komplexen interaktiv bedienbaren dynamisch/räumlichen Zeichengebilden.",
+		"allgemein":"Das erste Semester Interaktionsgestaltung lehrt den Studierenden essentielle Grundlagen der Gestaltung. Auseinandersetzungen mit Darstellung, Form und Typografie sind dabei zentrale Themen.",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 1",
 			/* ---- Kurs 2: Name ------- */ "Typografie 1",
 			/* ---- Kurs 3: Name ------- */ "Grundlagen der Gestaltung 1"
 		],
 		"kursBeschreibung":[
-			/* ---- Kurs 1: Beschreibung */ "Ziel des Projektes ist einen Jahreskalender zunächst im Plakatformat und im zweiten Schritt dynamisch interaktiv zu gestalten. Die Darstellungsmittel zur Umsetzung beschränken sich auf den Einsatz von abstrakten (geometrischen) Formen und der (systematischen) Anwendung von Farbe.",
+			/* ---- Kurs 1: Beschreibung */ "<br>- Systematisch aufeinander aufbauende Übungsfolgen zur Erreichung zunehmend komplexer morphologisch und kombinatorisch orientierter, statischer und dynamischer Zeichenoperationen.<br>- Analysemethoden zur Bewertung bestehender gestalterischer Produkte hinsichtlich deren unterschiedlichen Gestaltungsansätze, ihrer Organisations- und Interaktionsmöglichkeiten, deren inhaltlichen Strukturierung und formalen und ästhetischen Realisierung.<br>- Reflektion durch ein prinzipienorientiertes gestalterisches Konzept und dessen praktischen Realisierung.",			
 			/* ---- Kurs 2: Beschreibung */ "Untersuchung zur Prägnanz von Form, Flächen-, Kontrast- und Farbwirkung, Körperhaftigkeit und Tiefe. Am Beispiel einer isometrischen Modulreihe werden die Möglichkeiten veränderter Formwahrnehmung durch die Parameter Licht, Farbe und Oberfläche betrachtet.",
 			/* ---- Kurs 3: Beschreibung */ "In Grundlagen der Gestaltung ja eh"
 		],
@@ -153,7 +153,7 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"0",
-		"allgemein":"THIS IS KG Gestaltung digitaler Systeme<br><br>Digitale Medien, Handys, Tablets und Laptops durchdringen heute den gesamten Alltag. Dadurch ist ein stetig wachsendes Arbeitsfeld entstanden – die Konzeption und Gestaltung interaktiver Produkte: Applikationen für digitale Geräte, interaktive Exponate und digitale Arbeits– und Wohnumgebungen."
+		"allgemein":"Der Bachelorstudiengang Kommunikationsgestaltung befasst sich mit Methoden und Grundlagen, die zur professionellen Wissensaufbereitung, - darstellung und -vermittlung befähigen. Die Studierenden erlernen sowohl grafisches, typografisches und fotografisches als auch audiovisuelles und digitales Darstellen komplexer Kommunikationsprodukte und Informationssysteme."
 	},
 		// --------------- Kommunikationsgestaltung 1 ---------------
 	{
@@ -291,7 +291,7 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"0",
-		"allgemein":"THIS IS PG Gestaltung digitaler Systeme<br><br>Digitale Medien, Handys, Tablets und Laptops durchdringen heute den gesamten Alltag. Dadurch ist ein stetig wachsendes Arbeitsfeld entstanden – die Konzeption und Gestaltung interaktiver Produkte: Applikationen für digitale Geräte, interaktive Exponate und digitale Arbeits– und Wohnumgebungen."
+		"allgemein":"Der Bachelorstudiengang Produktgestaltung vermittelt Grundlagen und Methoden, sowie die damit verbundenen Fertigkeiten und Fähigkeiten zur Gestaltung von Industrieprodukten. Dies umfasst alle Aspekte des Produktentstehungsprozesses vom Entwurf bis zum Designmodell, Die Studierenden erlernen grundlegende gestalterische Fähigkeiten und Kenntnisse zur Produktsprache und -planung."
 	},
 		// --------------- Produktgestaltung 1 ---------------
 	{
@@ -429,7 +429,7 @@ getInfo([
 	{
 		"studiengang":"iot",
 		"semester":"0",
-		"allgemein":"THIS IS IOT Gestaltung digitaler Systeme<br><br>Digitale Medien, Handys, Tablets und Laptops durchdringen heute den gesamten Alltag. Dadurch ist ein stetig wachsendes Arbeitsfeld entstanden – die Konzeption und Gestaltung interaktiver Produkte: Applikationen für digitale Geräte, interaktive Exponate und digitale Arbeits– und Wohnumgebungen."
+		"allgemein":"Der Bachelorstudiengang befasst sich mit Aspekten der prototypischen Entwicklung und Realisierung nutzerzentrierter, funktionaler und technischer Hard- und Softwareprodukte sowie deren Vernetzung. Die Studierenden lernen grundlegende wissenschaftliche Methoden, Medien- und Programmiertechnologien sowie Designmethoden kennen. Der Studiengang findet in Kooperation mit dem Bachelor-Studiengang 'Internet der Dinge – Digitale Technologien in der Anwendung' der Hochschule Aalen statt."
 	},
 		// --------------- Internet der Dinge 1 ---------------
 	{
@@ -457,7 +457,7 @@ getInfo([
 	{
 		"studiengang":"sg",
 		"semester":"0",
-		"allgemein":"THIS IS SG Gestaltung digitaler Systeme<br><br>Digitale Medien, Handys, Tablets und Laptops durchdringen heute den gesamten Alltag. Dadurch ist ein stetig wachsendes Arbeitsfeld entstanden – die Konzeption und Gestaltung interaktiver Produkte: Applikationen für digitale Geräte, interaktive Exponate und digitale Arbeits– und Wohnumgebungen."
+		"allgemein":"Der Masterstudiengang Strategische Gestaltung baut auf die im Bachelor-Studium erworbenen Vorkenntnisse aus den Disziplinen der Interaktions-, Kommunikations- und Produktgestaltung – oder aus anderen gestaltungsrelevanten Wissensgebieten – auf und erweitert sie um wesentliche wissenschaftliche und wirtschaftliche Kenntnisse. Das dreisemestrige Studium ist anwendungsorientiert und interdisziplinär ausgerichtet. Seine vernetzten Schwerpunkte sind Gestaltung, Management und Forschung."
 	},
 		// --------------- Strategische Gestaltung 1 ---------------
 	{

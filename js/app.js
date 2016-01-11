@@ -3,6 +3,12 @@ function activateContent (active, deactive) {
 	$("." + deactive + "Content").removeClass("active");
 }
 
+function activateCell (cell) {
+	$(".programCell").removeClass("active");
+	$(cell).addClass("active");
+	var title = $(".programTitle");
+}
+
 window.onload = function() {
 	activateContent("programs", "services");
 	$("#sidebarServices").click(function(){
@@ -12,3 +18,4 @@ window.onload = function() {
 		activateContent("programs", "services");
 	});
 }
+
