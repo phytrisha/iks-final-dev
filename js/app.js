@@ -6,7 +6,10 @@ function activateContent (active, deactive) {
 function activateCell (cell) {
 	$(".programCell").removeClass("active");
 	$(cell).addClass("active");
-	var title = $(".programTitle");
+	var previous = $(cell).prev().attr("id");
+	$(".programCell > .programTitle").css("border-bottom-style", "solid");
+	$("#" + cell.id + " > .programTitle").css("border-bottom-style", "none");
+	$("#" + previous + " > .programTitle").css("border-bottom-style", "none");
 }
 
 window.onload = function() {
