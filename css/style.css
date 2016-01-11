@@ -214,6 +214,30 @@ p {
 	float: left;
 }
 
+.sidebarIcon {
+	width: 50px;
+	height: 50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin: 65px auto;
+}
+
+#toiletsIcon {
+	background-image: url(../img/icons/toilets.png);
+}
+
+#liftIcon {
+	background-image: url(../img/icons/lift.png);
+}
+
+#foodIcon {
+	background-image: url(../img/icons/food.png);
+}
+
+#infoIcon {
+	background-image: url(../img/icons/info.png);
+}
+
 .programTitle {
 	width: 605px;
 	height: 100%;
