@@ -192,10 +192,22 @@ p {
 .contentIndicator {
 	float: left;
 	width: 50%;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.contentIndicator.borderRight {
+	border-right-style: solid;
+	border-right-color: #7f7f7f;
+	border-right-width: 1px;
+}
+
+.contentIndicator.active {
+	background-color: #eee;
 }
 
 .vertIndicatorCenter {
-	margin-top: 70px;
+	margin-top: 60px;
 }
 
 
