@@ -1,0 +1,40 @@
+#room1 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 0%;
+	-webkit-transform: rotate(-25deg);
+}
+
+#room2 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 15%;
+	-webkit-transform: rotate(-25deg);
+}
+
+#room3 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 30%;
+	-webkit-transform: rotate(-25deg);
+}
+
+#room4 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 45%;
+	-webkit-transform: rotate(-25deg);
+}
+
+#room5 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 60%;
+	-webkit-transform: rotate(-25deg);
+}
+

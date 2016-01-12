@@ -69,27 +69,25 @@ function bakeTransform (elem, scaleValue) {
 	$("#mapElement").css("-webkit-transform", "scale(1.0)");
 }
 
+function disp( divs ) {
+	var a = [];
+	for ( var i = 0; i < divs.length; i++ ) {
+		a.push( divs[ i ] );
+	}
+	return a;
+}
+
+
 function readyFn () {
 	var mapElement = document.getElementById('mapElement');
-	var roomElement = document.getElementById('room1');
 
 	var mapManager = new Hammer.Manager(mapElement);
-	var roomManager = new Hammer.Manager(roomElement);
 
 	var pinch = new Hammer.Pinch();
 	var pan = new Hammer.Pan();
 	var tap = new Hammer.Tap();
 
-	var roomTap = new Hammer.Tap();
-
 	mapManager.add([tap, pinch, pan]);
-	roomManager.add(roomTap);
-
-	mapManager.get("tap").recognizeWith(roomManager.get("tap"));
-
-	roomManager.on("tap", function () {
-		console.log("tapped!");
-	})
 
 	mapManager.on("tap panstart", function() {
 		collapseSidebar();
@@ -132,11 +130,49 @@ function readyFn () {
 	mapManager.on("pinchend", function() {
 		bakeTransform("#mapElement", finalScale);
 		scaling = false;
+	}) 
+}
+
+function applyToRooms (room) {
+	var roomElement = document.getElementById('room' + room);
+	var roomManager = new Hammer.Manager(roomElement);
+	var tap = new Hammer.Tap();
+	roomManager.add(tap);
+	roomManager.on("tap", function() {
+		console.log("tapped on " + room);
 	})
-
-
- 
 }
 
 $(document).ready(readyFn);
 $(document).ready(scale("#mapElement", myElementScale));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

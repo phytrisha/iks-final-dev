@@ -30,6 +30,9 @@ window.onload = function() {
 	$("#programsSidebar").click(function(){
 		activateContent("programs", "services");
 	});
-	roomHandler();
+	roomHandler(5);
+	for (var i = 1; i <= 5; i++) {
+		applyToRooms(i);
+	};
 }
 
