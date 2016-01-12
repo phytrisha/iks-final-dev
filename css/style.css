@@ -62,7 +62,6 @@ img {
 ------------------------------------------ */
 
 #mapElement {
-	background: silver;
 	width: 1012px;
 	height: 860px;
 	top:250px;
@@ -70,8 +69,9 @@ img {
 	position: fixed;
 	/*-webkit-transition: -webkit-transform 0.2s;
 	-webkit-transition: -webkit-transform-origin 0.2s;*/
-	background-image: url(../img/maps/map_0.png);
-	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url(../img/maps/map_0.svg);
+	background-size: contain;
 }
 
 /* ------------------------------------------
@@ -244,23 +244,23 @@ p {
 	height: 50px;
 	background-size: 100%;
 	background-repeat: no-repeat;
-	margin: 65px auto;
+	margin: 66px auto;
 }
 
 #toiletsIcon {
-	background-image: url(../img/icons/toilets.png);
+	background-image: url(../img/icons/toilets.svg);
 }
 
 #liftIcon {
-	background-image: url(../img/icons/lift.png);
+	background-image: url(../img/icons/elevator.svg);
 }
 
 #foodIcon {
-	background-image: url(../img/icons/food.png);
+	background-image: url(../img/icons/mensa.svg);
 }
 
 #infoIcon {
-	background-image: url(../img/icons/info.png);
+	background-image: url(../img/icons/info.svg);
 }
 
 .programTitle {
@@ -356,9 +356,23 @@ p {
 	margin-left: 120px;
 }
 
+/* ------------------------------------------
+-- ROOMS ------------------------------------
+------------------------------------------ */
 
+.room {
+	background-color: green;
+	opacity: 0.5;
+	position: absolute;
+}
 
-
+#room1 {
+	width: 15%;
+	height: 10%;
+	left: 25%;
+	top: 19%;
+	-webkit-transform: rotate(-25deg);
+}
 
 
 

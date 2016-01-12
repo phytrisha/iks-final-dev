@@ -71,29 +71,40 @@ function bakeTransform (elem, scaleValue) {
 
 function readyFn () {
 	var mapElement = document.getElementById('mapElement');
+	var roomElement = document.getElementById('room1');
 
-	var mc = new Hammer.Manager(mapElement);
+	var mapManager = new Hammer.Manager(mapElement);
+	var roomManager = new Hammer.Manager(roomElement);
 
 	var pinch = new Hammer.Pinch();
 	var pan = new Hammer.Pan();
 	var tap = new Hammer.Tap();
 
-	mc.add([tap, pinch, pan]);
+	var roomTap = new Hammer.Tap();
 
-	mc.on("tap panstart", function() {
+	mapManager.add([tap, pinch, pan]);
+	roomManager.add(roomTap);
+
+	mapManager.get("tap").recognizeWith(roomManager.get("tap"));
+
+	roomManager.on("tap", function () {
+		console.log("tapped!");
+	})
+
+	mapManager.on("tap panstart", function() {
 		collapseSidebar();
 	})
 
-	mc.on("panstart", function() {
+	mapManager.on("panstart", function() {
 		startX = parseInt($("#mapElement").css("left"));
 		startY = parseInt($("#mapElement").css("top"));
 	})
 
-	mc.on("panmove", function(ev) {
+	mapManager.on("panmove", function(ev) {
 		appendTransform("#mapElement", ev.deltaX, ev.deltaY);
 	})
 
-	mc.on("pinchstart", function(ev) {
+	mapManager.on("pinchstart", function(ev) {
 		var values = getBounding("#mapElement");
 		var xCenter = ev.center.x;
 		xCenter = xCenter.map(values[0], values[2], 0, 100);
@@ -110,7 +121,7 @@ function readyFn () {
 
 	})
 
-	mc.on("pinchin pinchout", function(ev) {
+	mapManager.on("pinchin pinchout", function(ev) {
 		if (scaling) {
 			resultScale = ev.scale;
 			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
@@ -118,10 +129,13 @@ function readyFn () {
 		}
 	})
 
-	mc.on("pinchend", function() {
+	mapManager.on("pinchend", function() {
 		bakeTransform("#mapElement", finalScale);
 		scaling = false;
 	})
+
+
+ 
 }
 
 $(document).ready(readyFn);
