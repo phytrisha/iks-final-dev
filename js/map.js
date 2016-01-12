@@ -76,8 +76,13 @@ function readyFn () {
 
 	var pinch = new Hammer.Pinch();
 	var pan = new Hammer.Pan();
+	var tap = new Hammer.Tap();
 
-	mc.add([pinch, pan]);
+	mc.add([tap, pinch, pan]);
+
+	mc.on("tap panstart", function() {
+		collapseSidebar();
+	})
 
 	mc.on("panstart", function() {
 		startX = parseInt($("#mapElement").css("left"));
@@ -102,6 +107,7 @@ function readyFn () {
 
 		$("#mapElement").css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
 		scaling = true;
+
 	})
 
 	mc.on("pinchin pinchout", function(ev) {

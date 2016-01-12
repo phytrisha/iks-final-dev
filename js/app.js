@@ -25,6 +25,7 @@ window.onload = function() {
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){
 		activateContent("services", "programs");
+		collapseSidebar();
 	});
 	$("#programsSidebar").click(function(){
 		activateContent("programs", "services");
