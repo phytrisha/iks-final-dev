@@ -62,26 +62,30 @@ function giveDirections (room) {
 
 $(".programCell").click(function() {
 	activateCell(this);
+	displayContent(this.id);
+})
+
+function displayContent (content) {
 	$(".semesterSelector").html("");
 	var max = 8;
-	if (this.id == "sg") {
+	if (content == "sg") {
 		max = 4;
-	} else if (this.id == "iot") {
+	} else if (content == "iot") {
 		max = 2;
 	}
 	for (var i = 0; i < max; i++) {
 		if (i==0) {
-			$(".semesterSelector").append("<div class='semesterClick' id='" + this.id + i + "'><h1 class='horiCenter bold'>i</h1></div>");
+			$(".semesterSelector").append("<div class='semesterClick' id='" + content + i + "'><h1 class='horiCenter bold'>i</h1></div>");
 		} else if (i!=5) {
-			$(".semesterSelector").append("<div class='semesterClick' id='" + this.id + i + "'><h1 class='horiCenter bold'>" + i + "</h1></div>");
+			$(".semesterSelector").append("<div class='semesterClick' id='" + content + i + "'><h1 class='horiCenter bold'>" + i + "</h1></div>");
 		}
 	}
 	$(".contentView").addClass("active");
 	var selectorMargin = window.screen.width - (max/2) * parseInt($(".semesterClick").css("height"));
 	$(".semesterSelector").css("margin-top", selectorMargin + "px");
 	addClicks();
-	addContent(this.id + "0");
-})
+	addContent(content + "0");
+}
 
 function addContent (id) {
 	for (var i = 0; i < selector.length; i++) {
