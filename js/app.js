@@ -1,4 +1,6 @@
 var roomCount;
+var roomArray = [];
+var semesterArray = [];
 
 function activateContent (active, deactive) {
 	$("." + active + "Content").addClass("active");
@@ -32,8 +34,15 @@ function placeRooms (data) {
 		$("#room" + j).css("height", data[i].height);
 		$("#room" + j).css("left", data[i].left);
 		$("#room" + j).css("top", data[i].top);
-		$("#room" + j).css("-webkit-transform", "rotate(" + data[i].rotation + "deg)")
+		$("#room" + j).css("-webkit-transform", "rotate(" + data[i].rotation + "deg)");
+		roomArray[i] = data[i].room;
+		semesterArray[i] = data[i].semester;
 	};
+}
+
+function giveContent (room) {
+	console.log("you clicked on room: " + roomArray[room-1]);
+	console.log("in this room you can find: " + semesterArray[room-1]);
 }
 
 window.onload = function() {

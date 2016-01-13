@@ -1,6 +1,7 @@
 placeRooms([
 	{
-		"room":"1",
+		"room":"1.01",
+		"semester":"kg2",
 		"width": "16%",
 		"height": "9%",
 		"left": "6%",
@@ -8,7 +9,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"2",
+		"room":"1.02",
+		"semester":"ig2",
 		"width": "14.5%",
 		"height": "9.5%",
 		"left": "25%",
@@ -16,7 +18,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"3",
+		"room":"1.03",
+		"semester":"pg2",
 		"width": "15%",
 		"height": "10%",
 		"left": "38%",
@@ -24,7 +27,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"4",
+		"room":"1.04",
+		"semester":"kg1",
 		"width": "15%",
 		"height": "10%",
 		"left": "25%",
@@ -32,7 +36,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"5",
+		"room":"1.05",
+		"semester":"ig1",
 		"width": "15%",
 		"height": "10%",
 		"left": "25%",
@@ -40,7 +45,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"6",
+		"room":"1.06",
+		"semester":"pg1",
 		"width": "15%",
 		"height": "10%",
 		"left": "25%",
@@ -48,7 +54,8 @@ placeRooms([
 		"rotation":"-25"
 	},
 	{
-		"room":"7",
+		"room":"1.07",
+		"semester":"kg3",
 		"width": "15%",
 		"height": "10%",
 		"left": "25%",

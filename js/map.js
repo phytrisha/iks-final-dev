@@ -69,15 +69,6 @@ function bakeTransform (elem, scaleValue) {
 	$("#mapElement").css("-webkit-transform", "scale(1.0)");
 }
 
-function disp( divs ) {
-	var a = [];
-	for ( var i = 0; i < divs.length; i++ ) {
-		a.push( divs[ i ] );
-	}
-	return a;
-}
-
-
 function readyFn () {
 	var mapElement = document.getElementById('mapElement');
 
@@ -139,7 +130,7 @@ function applyToRooms (room) {
 	var tap = new Hammer.Tap();
 	roomManager.add(tap);
 	roomManager.on("tap", function() {
-		console.log("tapped on " + room);
+		giveContent(room);
 	})
 }
 
