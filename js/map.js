@@ -130,7 +130,7 @@ function applyToRooms (room) {
 	var tap = new Hammer.Tap();
 	roomManager.add(tap);
 	roomManager.on("tap", function() {
-		giveContent(room);
+		giveContent(room, $(roomElement).css("left"), $(roomElement).css("top"));
 	})
 }
 

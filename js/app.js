@@ -40,9 +40,8 @@ function placeRooms (data) {
 	};
 }
 
-function giveContent (room) {
-	console.log("you clicked on room: " + roomArray[room-1]);
-	console.log("in this room you can find: " + semesterArray[room-1]);
+function giveContent (room, xPos, yPos) {
+	generatePopup(semesterArray[room-1], xPos, yPos);
 }
 
 window.onload = function() {
@@ -54,6 +53,9 @@ window.onload = function() {
 	$("#programsSidebar").click(function(){
 		activateContent("programs", "services");
 	});
+	$(".popUpInfoButton").click(function() {
+		//generatePopup();
+	})
 
 	for (var i = 1; i <= roomCount; i++) {
 		applyToRooms(i);
