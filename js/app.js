@@ -1,3 +1,5 @@
+var roomCount;
+
 function activateContent (active, deactive) {
 	$("." + active + "Content").addClass("active");
 	$("." + deactive + "Content").removeClass("active");
@@ -21,6 +23,19 @@ function activateCell (cell) {
 	}
 }
 
+function placeRooms (data) {
+	roomCount = data.length;
+	for (var i = 0; i < data.length; i++) {
+		var j = i + 1;
+		$("#mapElement").append("<div class='room' id='room" + j + "'></div>");
+		$("#room" + j).css("width", data[i].width);
+		$("#room" + j).css("height", data[i].height);
+		$("#room" + j).css("left", data[i].left);
+		$("#room" + j).css("top", data[i].top);
+		$("#room" + j).css("-webkit-transform", "rotate(" + data[i].rotation + "deg)")
+	};
+}
+
 window.onload = function() {
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){
@@ -30,8 +45,8 @@ window.onload = function() {
 	$("#programsSidebar").click(function(){
 		activateContent("programs", "services");
 	});
-	roomHandler(5);
-	for (var i = 1; i <= 5; i++) {
+
+	for (var i = 1; i <= roomCount; i++) {
 		applyToRooms(i);
 	};
 }
