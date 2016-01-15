@@ -119,9 +119,24 @@ function readyFn () {
 	})
 
 	mapManager.on("pinchend", function() {
+		getCurrentMapScale(finalScale);
 		bakeTransform("#mapElement", finalScale);
 		scaling = false;
-	}) 
+	})
+}
+
+function getMapOffset () {
+	var offset = [];
+	offset[0] = parseInt($("#mapElement").css("left")) - 900;
+	offset[1] = parseInt($("#mapElement").css("top")) - 250;
+	return offset;
+}
+
+function getLocation (room) {
+	var position = [];
+	position[0] = $("#" + room).css("left");
+	position[1] = $("#" + room).css("top");
+	return position;
 }
 
 function applyToRooms (room) {
@@ -130,7 +145,7 @@ function applyToRooms (room) {
 	var tap = new Hammer.Tap();
 	roomManager.add(tap);
 	roomManager.on("tap", function() {
-		giveContent(room, $(roomElement).css("left"), $(roomElement).css("top"));
+		giveContent(room, roomElement);
 	})
 }
 

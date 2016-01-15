@@ -4,8 +4,100 @@
 		"selected_items":
 		[
 			[
+				"scale",
+				"scaleValue"
+			],
+			[
+				"scal",
+				"scaleValue"
+			],
+			[
+				"pop",
+				"popUpLine"
+			],
+			[
+				"room",
+				"roomElement"
+			],
+			[
+				"roo",
+				"roomElement"
+			],
+			[
+				"seme",
+				"semesterNum"
+			],
+			[
+				"semes",
+				"semesterNum"
+			],
+			[
+				"sem",
+				"semesterNum"
+			],
+			[
+				"semester",
+				"semesterArray"
+			],
+			[
 				"back",
-				"background-repeat"
+				"background-color"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"border-b",
+				"border-bottom-style"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"ro",
+				"roomNumber"
+			],
+			[
+				"getEle",
+				"getElementsByClassName"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"to",
+				"toArray"
+			],
+			[
+				"map",
+				"mapManager"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"u",
+				"Univers"
+			],
+			[
+				"activa",
+				"activateCell"
 			],
 			[
 				"pro",
@@ -48,20 +140,8 @@
 				"elem"
 			],
 			[
-				"roo",
-				"rooms"
-			],
-			[
-				"room",
-				"referenceRoom"
-			],
-			[
 				"re",
 				"referenceRoom"
-			],
-			[
-				"seme",
-				"semesterButton"
 			],
 			[
 				"sele",
@@ -160,10 +240,6 @@
 				"tangibleMenuHandler"
 			],
 			[
-				"font",
-				"font-weight"
-			],
-			[
 				"men",
 				"menuLeftOpen"
 			],
@@ -212,16 +288,8 @@
 				"temperatureRightZoneVariable"
 			],
 			[
-				"padd",
-				"padding-top"
-			],
-			[
 				"temp",
 				"temperatureRightZoneOutput"
-			],
-			[
-				"marg",
-				"margin-top"
 			],
 			[
 				"add",
@@ -262,10 +330,6 @@
 			[
 				"flo",
 				"floor2"
-			],
-			[
-				"map",
-				"mapKarteContentFloor1"
 			],
 			[
 				"clic",
@@ -450,96 +514,16 @@
 			[
 				"al",
 				"albumOverviewActive"
-			],
-			[
-				"log",
-				"logTopPos"
-			],
-			[
-				"le",
-				"left"
-			],
-			[
-				"stan",
-				"standardTemp"
-			],
-			[
-				"m",
-				"margin"
-			],
-			[
-				"rep",
-				"replaceWith"
-			],
-			[
-				"bor",
-				"border-radius"
-			],
-			[
-				"kli",
-				"klimaArea"
-			],
-			[
-				"cu",
-				"currentAreaIndicator"
-			],
-			[
-				"center",
-				"centerX"
-			],
-			[
-				"tem",
-				"temperatureOutput"
-			],
-			[
-				"test",
-				"test-area"
-			],
-			[
-				"rot",
-				"rotationChange"
-			],
-			[
-				"an",
-				"angleStart"
-			],
-			[
-				"angl",
-				"angleStart"
-			],
-			[
-				"body",
-				"body-area"
-			],
-			[
-				"cen",
-				"centerY"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 4892,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/database.js",
-			"settings":
-			{
-				"buffer_size": 3999,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 775,
+				"buffer_size": 1921,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +531,55 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 5027,
+				"buffer_size": 7012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/popUp.js",
+			"settings":
+			{
+				"buffer_size": 2358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "json/plan.js",
+			"settings":
+			{
+				"buffer_size": 20388,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/map.js",
+			"settings":
+			{
+				"buffer_size": 3929,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "json/roomLocation.js",
+			"settings":
+			{
+				"buffer_size": 948,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 5088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/database.js",
+			"settings":
+			{
+				"buffer_size": 4064,
 				"line_ending": "Unix"
 			}
 		}
@@ -594,19 +626,27 @@
 	[
 		"/Applications/MAMP/htdocs/iks-final-dev",
 		"/Applications/MAMP/htdocs/iks-final-dev/css",
+		"/Applications/MAMP/htdocs/iks-final-dev/font",
+		"/Applications/MAMP/htdocs/iks-final-dev/img",
+		"/Applications/MAMP/htdocs/iks-final-dev/img/icons",
+		"/Applications/MAMP/htdocs/iks-final-dev/img/maps",
 		"/Applications/MAMP/htdocs/iks-final-dev/js",
 		"/Applications/MAMP/htdocs/iks-final-dev/json"
 	],
 	"file_history":
 	[
+		"/Users/markmeyer/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Applications/MAMP/htdocs/iks-final-dev/json/rooms.js",
+		"/Applications/MAMP/htdocs/iks-final-dev/json/roomContent.js",
+		"/Users/markmeyer/Desktop/index.html",
+		"/Applications/MAMP/htdocs/iks-final-dev/css/roomPlan.css",
+		"/Applications/MAMP/htdocs/iks-final-dev/js/roomHandler.js",
 		"/Applications/MAMP/htdocs/iks-final-dev/js/database.js",
 		"/Applications/MAMP/htdocs/iks-final-dev/js/map.js",
 		"/Applications/MAMP/htdocs/iks-final-dev/index.html",
 		"/Applications/MAMP/htdocs/iks-final-dev/css/style.css",
 		"/Applications/MAMP/htdocs/iks-final-dev/js/app.js",
-		"/Applications/MAMP/htdocs/iks-final-dev/json/rooms.js",
 		"/Applications/MAMP/htdocs/iks-final-dev/json/plan.js",
-		"/Users/markmeyer/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/markmeyer/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Applications/MAMP/htdocs/TCIS/designV1/js/jquery.touch.js",
 		"/Users/markmeyer/Documents/HfG Gmünd IG4/iks2/hfg-guidance-system/hfg-guidance.sublime-project",
@@ -737,6 +777,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"float: left",
+			"applyToRooms",
+			"z-index",
 			"directions",
 			"console.log",
 			"temperatureLeft",
@@ -832,52 +875,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4892,
+						"buffer_size": 1921,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3090,
-								3090
-							],
-							[
-								3389,
-								3389
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1258.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "js/database.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3999,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1568,
-								1568
+								0,
+								0
 							]
 						],
 						"settings":
@@ -886,27 +896,143 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 784.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "js/app.js",
+					"buffer": 1,
+					"file": "css/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 775,
+						"buffer_size": 7012,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								520,
-								520
+								6911,
+								6911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6538.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/popUp.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								936,
+								936
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "json/plan.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1960,
+								1960
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/map.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3134,
+								3134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1079.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "json/roomLocation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 948,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								49,
+								49
 							]
 						],
 						"settings":
@@ -917,42 +1043,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "css/style.css",
+					"buffer": 6,
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5027,
+						"buffer_size": 5088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3417,
-								3417
+								5070,
+								5070
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3289.0,
+						"translation.y": 1569.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/database.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								691,
+								691
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1091.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -975,18 +1124,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.578579385553,
 			1.0
 		],
 		"rows":
@@ -1004,7 +1146,7 @@
 	"project": "iks2.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1038,7 +1180,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

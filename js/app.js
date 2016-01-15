@@ -40,8 +40,10 @@ function placeRooms (data) {
 	};
 }
 
-function giveContent (room, xPos, yPos) {
-	generatePopup(semesterArray[room-1], xPos, yPos);
+function giveContent (room, elem) {
+	var roomId = "room" + room;
+	var pos = getLocation(roomId);
+	generatePopup(semesterArray[room-1], pos);
 }
 
 window.onload = function() {
@@ -61,4 +63,40 @@ window.onload = function() {
 		applyToRooms(i);
 	};
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

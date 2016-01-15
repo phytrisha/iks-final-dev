@@ -12,13 +12,13 @@ getInfo([
 		"allgemein":"Das erste Semester Interaktionsgestaltung lehrt den Studierenden essentielle Grundlagen der Gestaltung. Auseinandersetzungen mit Darstellung, Form und Typografie sind dabei zentrale Themen.",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 1",
-			/* ---- Kurs 2: Name ------- */ "Typografie 1",
-			/* ---- Kurs 3: Name ------- */ "Grundlagen der Gestaltung 1"
+			/* ---- Kurs 2: Name ------- */ "Einführung in die Gestaltungsschwerpunkte",
+			/* ---- Kurs 3: Name ------- */ "Typografie 1"
 		],
 		"kursBeschreibung":[
-			/* ---- Kurs 1: Beschreibung */ "<br>- Systematisch aufeinander aufbauende Übungsfolgen zur Erreichung zunehmend komplexer morphologisch und kombinatorisch orientierter, statischer und dynamischer Zeichenoperationen.<br>- Analysemethoden zur Bewertung bestehender gestalterischer Produkte hinsichtlich deren unterschiedlichen Gestaltungsansätze, ihrer Organisations- und Interaktionsmöglichkeiten, deren inhaltlichen Strukturierung und formalen und ästhetischen Realisierung.<br>- Reflektion durch ein prinzipienorientiertes gestalterisches Konzept und dessen praktischen Realisierung.",			
-			/* ---- Kurs 2: Beschreibung */ "Untersuchung zur Prägnanz von Form, Flächen-, Kontrast- und Farbwirkung, Körperhaftigkeit und Tiefe. Am Beispiel einer isometrischen Modulreihe werden die Möglichkeiten veränderter Formwahrnehmung durch die Parameter Licht, Farbe und Oberfläche betrachtet.",
-			/* ---- Kurs 3: Beschreibung */ "In Grundlagen der Gestaltung ja eh"
+			/* ---- Kurs 1: Beschreibung */ "Als Teil der interdiszplinären Grundlagen der Gestaltung werden in Programmiertes Entwerfen 1 grundsätzliche Auseinandersetzungen mit Form, Animation und Interaktion an zahlreichen Beispielen und Versuchen gelehrt.",			
+			/* ---- Kurs 2: Beschreibung */ "Dem Studierenden werden erste Design-Methoden zur analytischen Herangehensweise an Problemstellungen näher gebracht. Als Anwendungsbeispiel entsteht im Laufe des Semesters eine Customer-Journey-Map, die die Benutzbarkeit eines Produktes dokumentiert.",
+			/* ---- Kurs 3: Beschreibung */ "Essentielle Grundlagen der Typografie werden in der Theorie gelehrt und bei Kurz-Projekten angewandt. Der Fokus liegt dabei vor allem auf der detaillierten Betrachtung und Bewertung von Schrift."
 		],
 		"kursRaum":[
 			/* ---- Kurs 1: Raum ------- */ "2.01",

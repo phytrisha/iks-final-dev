@@ -1,4 +1,14 @@
-function generatePopup (semester, x, y) {
+var scaleValue=1;
+
+function getCurrentMapScale (scale) {
+	scaleValue += (scale-1);
+	console.log(scaleValue);
+}
+
+function generatePopup (semester, pos) {
+
+	var offset = getMapOffset();
+
 	var program = semester.charAt(0) + semester.charAt(1);
 	var semesterNum;
 	if (program != "io") {
@@ -31,18 +41,24 @@ function generatePopup (semester, x, y) {
 			break;
 	}
 
-	var xPos = parseInt(x);
+	var xPos = parseInt(pos[0]);
 	var xOverflow = 0;
-	xPos-=150;
+	xPos+=(-50*scaleValue);
+	console.log(resultScale);
+
+	xPos+=offset[0];
 
 	if (xPos < 20) {
 		xOverflow = xPos;
 		xPos = 20;
 	}
 
-	var yPos = parseInt(y);
+	var yPos = parseInt(pos[1]);
 	var yOverflow = 0;
-	yPos-=150;
+	yPos+=(-100*scaleValue);
+	
+
+	yPos+=offset[1];
 
 	if (yPos < 20) {
 		yOverflow = yPos;
@@ -66,3 +82,26 @@ function generatePopup (semester, x, y) {
 	$(".popUpLine").css("left", 350 + xOverflow + "px");
 	$(".popUpLine").css("height", 100 + yOverflow + "px");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
