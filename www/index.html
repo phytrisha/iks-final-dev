@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>HfGuide</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="js/hammer.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+	</head>
+	
+	<body>
+		<div class="viewContainer">
+			<div class="mapView">
+				<div id="mapElement">
+
+				</div>
+				<div class="popUpSpace">
+					
+				</div>
+			</div>
+
+			<div class="sideBar">
+
+				<!-- //////////////// AREA INDICATOR //////////////// -->
+
+				<div class="topIndicator">
+					<div class="contentIndicator borderRight" id="programsSidebar">
+						<h1 class="horiCenter vertIndicatorCenter">Studiengänge</h1>
+					</div>
+					<div class="contentIndicator" id="servicesSidebar">
+						<h1 class="horiCenter vertIndicatorCenter">Service</h1>
+					</div>
+				</div>
+
+				<!-- //////////////// PROGRAM CELLS //////////////// -->
+
+				<div class="sidebarContent">
+					<ul class="programsContent">
+						<li class="programCell" id="pg">
+							<div class="programLabel">
+								<h1 class="vertCellCenter pgColor bold horiCenter">PG</h1>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Produktgestaltung</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="kg">
+							<div class="programLabel">
+								<h1 class="vertCellCenter kgColor bold horiCenter">KG</h1>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Kommunikationsgestaltung</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="ig">
+							<div class="programLabel">
+								<h1 class="vertCellCenter igColor bold horiCenter">IG</h1>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Interaktionsgestaltung</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="iot">
+							<div class="programLabel">
+								<h1 class="vertCellCenter iotColor bold horiCenter">IoT</h1>
+							</div>
+							<div class="programTitle ">
+								<h1 class="vertCellCenter floatLeft">Internet der Dinge</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="sg">
+							<div class="programLabel">
+								<h1 class="vertCellCenter sgColor bold horiCenter">SG</h1>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Strategische Gestaltung</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+					</ul>
+					<ul class="servicesContent">
+						<li class="programCell" id="toilets">
+							<div class="programLabel">
+								<div class="sidebarIcon" id="toiletsIcon"></div>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Toiletten</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="lift">
+							<div class="programLabel">
+								<div class="sidebarIcon" id="liftIcon"></div>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Aufzüge</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="food">
+							<div class="programLabel">
+								<div class="sidebarIcon" id="foodIcon"></div>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Essen & Trinken</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+						<li class="programCell" id="info">
+							<div class="programLabel">
+								<div class="sidebarIcon" id="infoIcon"></div>
+							</div>
+							<div class="programTitle">
+								<h1 class="vertCellCenter floatLeft">Information</h1>
+								<div class="chevron"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- //////////////// CONTENT VIEW //////////////// -->
+
+			<div class="contentView">
+				<div class="semesterSelector">
+				</div>
+				<div class="semesterContentView">
+					<div class="fixedTitle">
+						<div class="programLabel" id="currentLabel">
+						</div>
+						<div class="programTitle" id="currentProgram">
+						</div>
+					</div>
+					<div class="semesterContentFrame">
+						<div class="semesterContent">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			app.initialize();
+		</script>
+
+		<script type="text/javascript" src="js/database.js"></script>
+		<script type="text/javascript" src="json/plan.js"></script>
+		<script type="text/javascript" src="json/rooms.js"></script>
+		<script type="text/javascript" src="json/roomLocation.js"></script>
+		<script type="text/javascript" src="js/popUp.js"></script>
+
+	</body>
+</html>

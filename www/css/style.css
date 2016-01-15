@@ -1,0 +1,470 @@
+/* ------------------------------------------
+-- GENERAL VIEWS & OPTIONS ------------------
+------------------------------------------ */
+
+.viewContainer {
+	width: 2048px;
+	height: 1536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+}
+
+.mapView {
+	width: 1264px;
+	height: 1536px;
+	top: 0px;
+	left: 784px;
+	position: absolute;
+	background-color: #fff;
+}
+
+.sideBar {
+	width: 784px;
+	height: 1536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	float: left;
+	background-color: #fff;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #7f7f7f;
+	z-index: 20;
+}
+
+.contentView {
+	width: 1024px;
+	height: 100%;
+	top: 0px;
+	left: -240px;
+	background-color: #fff;
+	position: absolute;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #7f7f7f;
+	z-index: 10;
+	-webkit-transition: left 0.5s;
+}
+
+.contentView.active {
+	left: 784px;
+}
+
+img {
+	width: 100%;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+/* ------------------------------------------
+-- KARTE ALSO MAP ---------------------------
+------------------------------------------ */
+
+#mapElement {
+	width: 1012px;
+	height: 860px;
+	top:250px;
+	left:900px;
+	position: fixed;
+	/*-webkit-transition: -webkit-transform 0.2s;
+	-webkit-transition: -webkit-transform-origin 0.2s;*/
+	background-repeat: no-repeat;
+	background-image: url(../img/maps/map_0.svg);
+	background-size: contain;
+}
+
+/* ------------------------------------------
+-- TYPOGRAPHY -------------------------------
+------------------------------------------ */
+
+@font-face {
+  font-family: 'UniversLTStd';
+  src: url('../font/UniversLTStd.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'UniversLTStd-Bold';
+  src: url('../font/UniversLTStd-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'UniversLTStd-Light';
+  src: url('../font/UniversLTStd-Light.otf') format('opentype');
+}
+
+h1 {
+	font-family: 'UniversLTStd';
+	font-weight: normal;
+	font-size: 35px;
+}
+
+h2 {
+	font-family: 'UniversLTStd-Bold';
+	font-size: 35px;
+	font-weight: normal;
+	line-height: 50px;
+	margin-bottom: 60px;
+}
+
+p {
+	font-family: 'UniversLTStd';
+	font-size: 35px;
+	font-weight: normal;
+	line-height: 50px;
+}
+
+.bold {
+	font-family: 'UniversLTStd-Bold';
+}
+
+.horiCenter {
+	text-align: center;
+}
+
+/* ------------------------------------------
+-- COLORS -----------------------------------
+------------------------------------------ */
+
+.pgColor {
+	color: #1c93a7;
+}
+
+.igColor {
+	color: #a9bd38;
+}
+
+.kgColor {
+	color: #e48e13;
+}
+
+.iotColor {
+	color: #283178;
+}
+
+.sgColor {
+	color: #b548b1;
+}
+
+
+/* ------------------------------------------
+-- SIDEBAR ----------------------------------
+------------------------------------------ */
+
+/* general */
+
+.sidebarContent {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	overflow: hidden;
+}
+
+.programsContent {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: -784px;
+	background-color: #fff;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #7f7f7f;
+	-webkit-transition: left 0.5s;
+}
+
+.servicesContent {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 784px;
+	background-color: #fff;
+	-webkit-transition: left 0.5s;
+}
+
+.programsContent.active {
+	left: 0px;
+}
+
+.servicesContent.active {
+	left: 0px;
+}
+
+/* top */
+
+.topIndicator {
+	width: 100%;
+	height: 146px;
+	top: 0px;
+	left: 0px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
+}
+
+.contentIndicator {
+	float: left;
+	width: 50%;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.contentIndicator.borderRight {
+	border-right-style: solid;
+	border-right-color: #7f7f7f;
+	border-right-width: 1px;
+}
+
+.contentIndicator.active {
+	background-color: #eee;
+}
+
+.vertIndicatorCenter {
+	margin-top: 60px;
+}
+
+
+/* cells */
+
+.programCell {
+	/*width: 100%;*/
+	height: 189px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	list-style: none;
+}
+
+.programLabel {
+	width: 178px;
+	height: 100%;
+	float: left;
+}
+
+.sidebarIcon {
+	width: 50px;
+	height: 50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin: 66px auto;
+}
+
+#toiletsIcon {
+	background-image: url(../img/icons/toilets.svg);
+}
+
+#liftIcon {
+	background-image: url(../img/icons/elevator.svg);
+}
+
+#foodIcon {
+	background-image: url(../img/icons/mensa.svg);
+}
+
+#infoIcon {
+	background-image: url(../img/icons/info.svg);
+}
+
+#routeIcon {
+	background-image: url(../img/icons/route.svg);
+}
+
+
+.programTitle {
+	width: 604px;
+	height: 100%;
+	float: left;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
+}
+
+.programTitle.active {
+	color: red;
+	border-bottom-style: none;
+}
+
+.programCell.active {
+	background-color: #eee;
+}
+
+.vertCellCenter {
+	margin-top: 80px;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.chevron {
+	width: 100px;
+	height: 100px;
+	background-image: url(../img/icons/chevron.png);
+	margin-left: 500px;
+	margin-top: 40px;
+	display: none;
+}
+
+/* ------------------------------------------
+-- CONTENT-VIEW -----------------------------
+------------------------------------------ */
+
+.semesterSelector {
+	width: 120px;
+	height: 840px;
+	margin-top: 768px;
+	float: left;
+}
+
+.semesterClick {
+	width: 120px;
+	height: 120px;
+	padding-top: 50px;
+	color: #aaa;
+}
+
+.semesterClick.active {
+	color: #000;
+}
+
+.semesterContentView {
+	width: 904px;
+	margin-left: 120px;
+	height: 100%;
+}
+
+.fixedTitle {
+	position: fixed;
+	width: 903px;
+	padding-bottom: 60px;
+	background-color: #fff;
+}
+
+.fixedTitle > .programLabel {
+	margin-top: 60px;
+	width: 120px;
+}
+
+.fixedTitle > .programTitle {
+	margin-top: 60px;
+	border-bottom-style: none;
+}
+
+.semesterContentFrame {
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow-y: scroll;
+}
+
+.semesterContent {
+	width: 664px;
+	margin-top: 160px;
+	margin-left: 120px;
+}
+
+/* ------------------------------------------
+-- ROOMS ------------------------------------
+------------------------------------------ */
+
+.room {
+	background-color: green;
+	opacity: 0.5;
+	position: absolute;
+}
+
+/* ------------------------------------------
+-- POPUP ------------------------------------
+------------------------------------------ */
+
+.popUp {
+	width: 700px;
+	height: 379px;
+	background-color: rgba(255,255,255,0.95);
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7f7f7f;
+	position: absolute;
+}
+
+.popUpTitle {
+	width: 100%;
+	height: 130px;
+	position: absolute;
+}
+
+.popUpInfoButton {
+	width: 100%;
+	height: 130px;
+	margin-top: 126px;
+	position: absolute;
+}
+
+.popUpRouteButton {
+	width: 100%;
+	height: 130px;
+	margin-top: 252px;
+	position: absolute;
+}
+
+.popUpVertCenter {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.popUpFullTitle {
+	margin-left: 120px;
+	padding-bottom: 40px;
+}
+
+.popUpUnderline {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
+}
+
+.popUpIcon {
+	width: 50px;
+	height: 50px;
+	margin-top: 40px;
+	margin-left: 40px;
+	float: left;
+	background-size: 100%;
+}
+
+.popUpLine {
+	width: 2px;
+	height: 100px;
+	top: 100%;
+	left: 350px;
+	margin-left: -1px;
+	position: relative;
+	background-color: #7f7f7f
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
