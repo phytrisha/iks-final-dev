@@ -41,11 +41,17 @@ function placeRooms (data) {
 }
 
 function giveContent (room, elem) {
-	//console.log("room: " + room);
-	//enconsole.log("elem: " + elem);
 	var roomId = "room" + room;
 	var pos = getLocation(roomId);
 	generatePopup(semesterArray[room-1], pos, room);
+}
+
+function fitToContainer(){
+	var canvas = document.getElementById("myCanvas");
+	var width = parseInt($(".mapElement.active").css("width"));
+	var height = parseInt($(".mapElement.active").css("height"));
+	canvas.width = width;
+	canvas.height = height;
 }
 
 $(document).ready(function() {
@@ -64,13 +70,13 @@ $(document).ready(function() {
 	for (var i = 1; i <= roomCount; i++) {
 		applyToRooms(i);
 	};
+
+	var currentLocation = defineCurrentLocation();
+	fitToContainer();
+	giveRoute(currentLocation, 1);
+	
+
 })
-
-
-
-
-
-
 
 
 

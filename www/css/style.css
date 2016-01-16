@@ -63,7 +63,7 @@ img {
 
 .mapElement {
 	width: 1012px;
-	height: 860px;
+	height: 196px;
 	top:-1000px;
 	left:900px;
 	position: fixed;
@@ -74,7 +74,7 @@ img {
 }
 
 .mapElement.active {
-	top: 250px; 
+	top: 500px; 
 }
 
 #floor1 {
@@ -382,9 +382,10 @@ p {
 ------------------------------------------ */
 
 .room {
-	background-color: #eee;
-	opacity: 1;
+	background-color: #00ff00;
+	opacity: 0.5;
 	position: absolute;
+	z-index: 10;
 }
 
 /* ------------------------------------------
@@ -395,6 +396,7 @@ p {
 	position: relative;
 	width: 700px;
 	height: 379px;
+	z-index: 999;
 	background-color: rgba(255,255,255,0.95);
 	border-style: solid;
 	border-width: 1px;
@@ -456,7 +458,39 @@ p {
 	background-color: #7f7f7f
 }
 
+/* ------------------------------------------
+-- ROUTE ------------------------------------
+------------------------------------------ */
 
+.routeLine {
+	position: relative;
+	background-color: blue;
+}
+
+.routeHall {
+	position: relative;
+	height: 5px;
+	background-color: green;
+	opacity: 0.5;
+}
+
+#hall1 {
+	width: 54%;
+	top: 33%;
+	left: 2.5%;
+}
+
+#hall2 {
+	width: 30%;
+	top: 36%;
+	left: 56.5%;
+}
+
+.currentLocation {
+	position: relative;
+	top: 50%;
+	left: 48%;
+}
 
 
 

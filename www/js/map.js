@@ -127,6 +127,9 @@ function loadMap (floor) {
 	mapManager.on("pinchend", function() {
 		getCurrentMapScale(finalScale);
 		bakeTransform("#floor" + currentFloor, finalScale);
+		var currentLocation = defineCurrentLocation();
+		fitToContainer();
+		giveRoute(currentLocation, 1);
 		scaling = false;
 	})
 }
@@ -143,6 +146,13 @@ function getLocation (room) {
 	position[0] = $("#" + room).css("left");
 	position[1] = $("#" + room).css("top");
 	return position;
+}
+
+function getCenter (room) {
+	var center = [];
+	center[0] = parseInt($("#" + room).css("left")) + parseInt($("#" + room).css("width")) / 2;
+	center[1] = parseInt($("#" + room).css("top")) + parseInt($("#" + room).css("height")) / 2;
+	return center;
 }
 
 function applyToRooms (room) {

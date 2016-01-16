@@ -11,13 +11,18 @@
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 		<script type="text/javascript" src="js/hammer.min.js"></script>
+		<script type="text/javascript" src="js/simpleDraw.js"></script>
 	</head>
 	
 	<body>
 		<div class="viewContainer">
 			<div class="mapView">
 				<div class="mapElement active" id="floor1">
-
+					<canvas id="myCanvas" width="500" height="100" style="float:left;"></canvas>
+					<!--<div class="routeHall" id="hall1"></div>
+					<div class="routeHall" id="hall2"></div>-->
+					<div class="currentLocation"></div>
+					<!--<div class="routeLine"></div>-->
 				</div>
 				<!--<div class="mapElement" id="floor2">
 
@@ -162,9 +167,9 @@
 			app.initialize();
 		</script>
 
-		<script type="text/javascript" src="js/map.js"></script> 
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/route.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-
 
 		<script type="text/javascript" src="js/database.js"></script>
 		<script type="text/javascript" src="json/plan.js"></script>
