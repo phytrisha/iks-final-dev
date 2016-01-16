@@ -16,6 +16,8 @@ var finalScale = 1.0;
 var xPercent;
 var yPercent;
 
+var currentFloor = 1;
+
 Number.prototype.map = function (in_min, in_max, out_min, out_max) {
   return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -66,11 +68,13 @@ function bakeTransform (elem, scaleValue) {
 	$(elem).css("width", newWidth + "px");
 	$(elem).css("height", newHeight + "px");
 
-	$("#mapElement").css("-webkit-transform", "scale(1.0)");
+	$("#floor" + currentFloor).css("-webkit-transform", "scale(1.0)");
 }
 
-function readyFn () {
-	var mapElement = document.getElementById('mapElement');
+function loadMap (floor) {
+	currentFloor = floor;
+	var mapName = "floor" + currentFloor;
+	var mapElement = document.getElementById(mapName);
 
 	var mapManager = new Hammer.Manager(mapElement);
 
@@ -85,16 +89,18 @@ function readyFn () {
 	})
 
 	mapManager.on("panstart", function() {
-		startX = parseInt($("#mapElement").css("left"));
-		startY = parseInt($("#mapElement").css("top"));
+		startX = parseInt($("#floor" + currentFloor).css("left"));
+		startY = parseInt($("#floor" + currentFloor).css("top"));
+		closePopUps();
 	})
 
 	mapManager.on("panmove", function(ev) {
-		appendTransform("#mapElement", ev.deltaX, ev.deltaY);
+		appendTransform("#floor" + currentFloor, ev.deltaX, ev.deltaY);
 	})
 
 	mapManager.on("pinchstart", function(ev) {
-		var values = getBounding("#mapElement");
+		closePopUps();
+		var values = getBounding("#floor" + currentFloor);
 		var xCenter = ev.center.x;
 		xCenter = xCenter.map(values[0], values[2], 0, 100);
 		xCenter = xCenter.clamp(0,100);
@@ -105,7 +111,7 @@ function readyFn () {
 		xPercent = xCenter;
 		yPercent = yCenter;
 
-		$("#mapElement").css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
+		$("#floor" + currentFloor).css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
 		scaling = true;
 
 	})
@@ -114,21 +120,21 @@ function readyFn () {
 		if (scaling) {
 			resultScale = ev.scale;
 			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
-			scale("#mapElement", resultScale);
+			scale("#floor" + currentFloor, resultScale);
 		}
 	})
 
 	mapManager.on("pinchend", function() {
 		getCurrentMapScale(finalScale);
-		bakeTransform("#mapElement", finalScale);
+		bakeTransform("#floor" + currentFloor, finalScale);
 		scaling = false;
 	})
 }
 
 function getMapOffset () {
 	var offset = [];
-	offset[0] = parseInt($("#mapElement").css("left")) - 900;
-	offset[1] = parseInt($("#mapElement").css("top")) - 250;
+	offset[0] = parseInt($("#floor" + currentFloor).css("left")) - 900;
+	offset[1] = parseInt($("#floor" + currentFloor).css("top")) - 250;
 	return offset;
 }
 
@@ -149,8 +155,8 @@ function applyToRooms (room) {
 	})
 }
 
-$(document).ready(readyFn);
-$(document).ready(scale("#mapElement", myElementScale));
+$(document).ready(loadMap(1));
+$(document).ready(scale("#floor" + currentFloor, myElementScale));
 
 
 

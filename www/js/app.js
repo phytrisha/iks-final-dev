@@ -29,7 +29,7 @@ function placeRooms (data) {
 	roomCount = data.length;
 	for (var i = 0; i < data.length; i++) {
 		var j = i + 1;
-		$("#mapElement").append("<div class='room' id='room" + j + "'></div>");
+		$("#floor1").append("<div class='room' id='room" + j + "'></div>");
 		$("#room" + j).css("width", data[i].width);
 		$("#room" + j).css("height", data[i].height);
 		$("#room" + j).css("left", data[i].left);
@@ -41,12 +41,14 @@ function placeRooms (data) {
 }
 
 function giveContent (room, elem) {
+	//console.log("room: " + room);
+	//enconsole.log("elem: " + elem);
 	var roomId = "room" + room;
 	var pos = getLocation(roomId);
-	generatePopup(semesterArray[room-1], pos);
+	generatePopup(semesterArray[room-1], pos, room);
 }
 
-window.onload = function() {
+$(document).ready(function() {
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){
 		activateContent("services", "programs");
@@ -62,13 +64,7 @@ window.onload = function() {
 	for (var i = 1; i <= roomCount; i++) {
 		applyToRooms(i);
 	};
-}
-
-
-
-
-
-
+})
 
 
 
