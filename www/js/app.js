@@ -67,15 +67,57 @@ $(document).ready(function() {
 		//generatePopup();
 	})
 
+	$(".floorButton").click(function() {
+		for (var i = 1; i <= 3; i++) {
+			$("#switch" + i).removeClass("active");
+		};
+		$("#switch" + currentFloor).addClass("active");
+		var floorNumber = this.id.charAt(6);
+		$( "#floor" + floorNumber).animate({
+			top: "658",
+			opacity: "1"
+		}, 600)
+		if (floorNumber == 1) {
+			$("#floor2").animate({
+				top: "-658",
+				opacity: "0"
+			}, 600)
+			$("#floor3").animate({
+				top: "-2194",
+				opacity: "0"
+			}, 600)
+		} else if (floorNumber == 2) {
+			$("#floor1").animate({
+				top: "2194",
+				opacity: "0"
+			}, 600)
+			$("#floor3").animate({
+				top: "-658",
+				opacity: "0"
+			}, 600)
+		} else if (floorNumber == 3) {
+			$("#floor1").animate({
+				top: "3730",
+				opacity: "0"
+			}, 600)
+			$("#floor2").animate({
+				top: "2194",
+				opacity: "0"
+			}, 600)
+		}
+		currentFloor = floorNumber;
+		loadMap(currentFloor);
+	});
+
 	for (var i = 1; i <= roomCount; i++) {
 		applyToRooms(i);
 	};
 
+	//console.log("floor: " + currentFloor);
 	var currentLocation = defineCurrentLocation();
 	fitToContainer();
-	giveRoute(currentLocation, 1);
+	giveRoute(currentLocation, 4);
 	
-
 })
 
 

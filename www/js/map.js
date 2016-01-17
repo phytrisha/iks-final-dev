@@ -96,6 +96,13 @@ function loadMap (floor) {
 
 	mapManager.on("panmove", function(ev) {
 		appendTransform("#floor" + currentFloor, ev.deltaX, ev.deltaY);
+		var mapDim = getBounding($("#floor" + currentFloor));
+		if (mapDim[2] > 1928) {
+			$(".floorButtons").addClass("bg");
+		} else {
+			$(".floorButtons").removeClass("bg");
+		}
+		console.log(mapDim[2]);
 	})
 
 	mapManager.on("pinchstart", function(ev) {
@@ -120,8 +127,16 @@ function loadMap (floor) {
 		if (scaling) {
 			resultScale = ev.scale;
 			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
+			var mapDim = getBounding($("#floor" + currentFloor));
+			var borderValue = (mapDim[2]/2)*resultScale+mapDim[2]/2;
+			if (borderValue > 1928) {
+				$(".floorButtons").addClass("bg");
+			} else {
+				$(".floorButtons").removeClass("bg");
+			}
 			scale("#floor" + currentFloor, resultScale);
 		}
+
 	})
 
 	mapManager.on("pinchend", function() {
@@ -129,7 +144,7 @@ function loadMap (floor) {
 		bakeTransform("#floor" + currentFloor, finalScale);
 		var currentLocation = defineCurrentLocation();
 		fitToContainer();
-		giveRoute(currentLocation, 1);
+		giveRoute(currentLocation, 3);
 		scaling = false;
 	})
 }
@@ -150,8 +165,8 @@ function getLocation (room) {
 
 function getCenter (room) {
 	var center = [];
-	center[0] = parseInt($("#" + room).css("left")) + parseInt($("#" + room).css("width")) / 2;
-	center[1] = parseInt($("#" + room).css("top")) + parseInt($("#" + room).css("height")) / 2;
+	center[0] = parseInt(parseInt($("#" + room).css("left")) + parseInt($("#" + room).css("width")) / 2);
+	center[1] = parseInt(parseInt($("#" + room).css("top")) + parseInt($("#" + room).css("height")) / 2);
 	return center;
 }
 
@@ -165,7 +180,7 @@ function applyToRooms (room) {
 	})
 }
 
-$(document).ready(loadMap(1));
+$(document).ready(loadMap(2));
 $(document).ready(scale("#floor" + currentFloor, myElementScale));
 
 

@@ -73,8 +73,16 @@ img {
 	background-size: contain;
 }
 
+.mapElement.upper {
+	top: -250px;
+}
+
+.mapElement.lower {
+	top: 1500px;
+}
+
 .mapElement.active {
-	top: 500px; 
+	top: 658px; 
 }
 
 #floor1 {
@@ -82,13 +90,49 @@ img {
 }
 
 #floor2 {
-	background-image: url(../img/maps/map_1.svg);
+	background-image: url(../img/maps/train_map_1.svg);
 }
 
 #floor3 {
-	background-image: url(../img/maps/map_2.svg);
+	background-image: url(../img/maps/train_map_2.svg);
 }
 
+.floorSwitcher {
+	top: 0px;
+	left: 1928px;
+	width: 120px;
+	height: 100%;
+	position: fixed;
+}
+
+.floorButtons {
+	background-color: rgba(255,255,255,0.95);
+	height: 600px;
+	width: 100%;
+	padding-top: 120px;
+	padding-bottom: 120px;
+	top:50%;
+	position: relative;
+	margin-top: -300px;
+}
+
+.floorButtons.bg {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7f7f7f;
+}
+
+.floorButton {
+	width: 120px;
+	height: 120px;
+	text-align: center;
+	padding-top: 46px;
+	color: #444;
+}
+
+.floorButton.active {
+	color: #000;
+}
 
 /* ------------------------------------------
 -- TYPOGRAPHY -------------------------------
@@ -470,8 +514,6 @@ p {
 .routeHall {
 	position: relative;
 	height: 5px;
-	background-color: green;
-	opacity: 0.5;
 }
 
 #hall1 {
