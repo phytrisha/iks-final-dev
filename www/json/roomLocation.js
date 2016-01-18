@@ -34,5 +34,23 @@ placeRooms([
 		"left": "70%",
 		"top": "40%",
 		"rotation":"0"
+	},
+	{
+		"room":"0.04",
+		"semester":"kg1",
+		"width": "15%",
+		"height": "25%",
+		"left": "70%",
+		"top": "40%",
+		"rotation":"0"
+	},
+	{
+		"room":"3.04",
+		"semester":"kg1",
+		"width": "15%",
+		"height": "25%",
+		"left": "70%",
+		"top": "40%",
+		"rotation":"0"
 	}
 ])

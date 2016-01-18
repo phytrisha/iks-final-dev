@@ -97,6 +97,10 @@ img {
 	background-image: url(../img/maps/train_map_2.svg);
 }
 
+#floor4 {
+	background-image: url(../img/maps/train_map_3.svg);
+}
+
 .floorSwitcher {
 	top: 0px;
 	left: 1928px;
@@ -127,7 +131,7 @@ img {
 	height: 120px;
 	text-align: center;
 	padding-top: 46px;
-	color: #444;
+	color: rgba(0,0,0,0.5);
 }
 
 .floorButton.active {

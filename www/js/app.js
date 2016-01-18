@@ -27,9 +27,11 @@ function activateCell (cell) {
 
 function placeRooms (data) {
 	roomCount = data.length;
+
 	for (var i = 0; i < data.length; i++) {
 		var j = i + 1;
-		$("#floor1").append("<div class='room' id='room" + j + "'></div>");
+		var placeToFloor = parseInt(data[i].room.charAt(0)) + 1;
+		$("#floor" + placeToFloor).append("<div class='room' id='room" + j + "'></div>");
 		$("#room" + j).css("width", data[i].width);
 		$("#room" + j).css("height", data[i].height);
 		$("#room" + j).css("left", data[i].left);
@@ -68,16 +70,24 @@ $(document).ready(function() {
 	})
 
 	$(".floorButton").click(function() {
-		for (var i = 1; i <= 3; i++) {
+		/*for (var i = 1; i <= 4; i++) {
 			$("#switch" + i).removeClass("active");
 		};
-		$("#switch" + currentFloor).addClass("active");
+		$("#switch" + currentFloor).addClass("active");*/
+		$(".floorButton").removeClass("active");
+		$(this).addClass("active");
 		var floorNumber = this.id.charAt(6);
+		for (var i = 1; i <= 4; i++) {
+			$("#floor" + i).animate({
+				top:"-658",
+				opacity:"0"
+			}, 600)
+		};
 		$( "#floor" + floorNumber).animate({
 			top: "658",
 			opacity: "1"
 		}, 600)
-		if (floorNumber == 1) {
+		/*if (floorNumber == 1) {
 			$("#floor2").animate({
 				top: "-658",
 				opacity: "0"
@@ -104,7 +114,16 @@ $(document).ready(function() {
 				top: "2194",
 				opacity: "0"
 			}, 600)
-		}
+		} else if (floorNumber == 4) {
+			$("#floor1").animate({
+				top: "3730",
+				opacity: "0"
+			}, 600)
+			$("#floor2").animate({
+				top: "2194",
+				opacity: "0"
+			}, 600)
+		}*/
 		currentFloor = floorNumber;
 		loadMap(currentFloor);
 	});
