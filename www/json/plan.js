@@ -9,7 +9,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"1",
-		"allgemein":"Das erste Semester Interaktionsgestaltung lehrt den Studierenden essentielle Grundlagen der Gestaltung. Auseinandersetzungen mit Darstellung, Form und Typografie sind dabei zentrale Themen.",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 1",
 			/* ---- Kurs 2: Name ------- */ "Einführung in die Gestaltungsschwerpunkte",
@@ -35,7 +34,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"2",
-		"allgemein":"Im zweiten Semester Interaktionsgestaltung geht nie in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 2",
 			/* ---- Kurs 2: Name ------- */ "Interface Design 1",
@@ -65,7 +63,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"3",
-		"allgemein":"Im dritten Semester Interaktionsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -87,7 +84,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"4",
-		"allgemein":"Im vierten Semester Interaktionsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -109,7 +105,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"6",
-		"allgemein":"Im sechsten Semester Interaktionsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -131,7 +126,6 @@ getInfo([
 	{
 		"studiengang":"ig",
 		"semester":"7",
-		"allgemein":"Im siebten Semester Interaktionsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -159,7 +153,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"1",
-		"allgemein":"Im ersten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -181,7 +174,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"2",
-		"allgemein":"Im zweiten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -203,7 +195,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"3",
-		"allgemein":"Im dritten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -225,7 +216,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"4",
-		"allgemein":"Im vierten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -247,7 +237,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"6",
-		"allgemein":"Im sechsten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -269,7 +258,6 @@ getInfo([
 	{
 		"studiengang":"kg",
 		"semester":"7",
-		"allgemein":"Im siebten Semester Kommunikationsgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -297,7 +285,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"1",
-		"allgemein":"Im ersten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -319,7 +306,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"2",
-		"allgemein":"Im zweiten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -341,7 +327,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"3",
-		"allgemein":"Im dritten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -363,7 +348,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"4",
-		"allgemein":"Im vierten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -385,7 +369,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"6",
-		"allgemein":"Im sechsten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -407,7 +390,6 @@ getInfo([
 	{
 		"studiengang":"pg",
 		"semester":"7",
-		"allgemein":"Im siebten Semester Produktgestaltung geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -435,7 +417,6 @@ getInfo([
 	{
 		"studiengang":"iot",
 		"semester":"1",
-		"allgemein":"Im ersten Semester IoT geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -463,7 +444,6 @@ getInfo([
 	{
 		"studiengang":"sg",
 		"semester":"1",
-		"allgemein":"Im ersten Semester SG geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -485,7 +465,6 @@ getInfo([
 	{
 		"studiengang":"sg",
 		"semester":"2",
-		"allgemein":"Im zweiten Semester SG geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",
@@ -507,7 +486,6 @@ getInfo([
 	{
 		"studiengang":"sg",
 		"semester":"3",
-		"allgemein":"Im dritten Semester SG geht vielleicht in die Werkstatt",
 		"kurse":[
 			/* ---- Kurs 1: Name ------- */ "Invention Design 1",
 			/* ---- Kurs 2: Name ------- */ "Application Design 1",

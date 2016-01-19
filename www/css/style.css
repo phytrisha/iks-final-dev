@@ -425,6 +425,21 @@ p {
 	margin-left: 120px;
 }
 
+.closeButton {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 18px;
+	left: 904px;
+	margin: 40px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#closeIcon {
+	background-image: url(../img/icons/close.svg);
+}
+
 /* ------------------------------------------
 -- ROOMS ------------------------------------
 ------------------------------------------ */

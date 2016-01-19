@@ -117,16 +117,18 @@ function addContent (id) {
 			$("#currentProgram").html("<h1 class='bold'>" + fullName + " " + targetSemester[i] + "</h1>");
 
 			$(".semesterContent").html("");
-			$(".semesterContent").append("<p>" + general[i] + "</p>");
+			if (general[i] != undefined) {
+				$(".semesterContent").append("<p>" + general[i] + "</p>");
+			}
 			$(".semesterContent").append("<div style='height:60px;'></div>");
 			if (titles[i].length != undefined) {
 				for (var j = 0; j < titles[i].length; j++) {
 					$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
 					$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
-					$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
 					if (images[i][j] != "") {
 						$(".semesterContent").append("<img src='img/" + images[i][j] + "'>");
 					}
+					$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
 					//giveDirections(rooms[i][j]);
 					$(".semesterContent").append("<div style='height:60px;'></div>");
 				}

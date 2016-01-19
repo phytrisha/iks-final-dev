@@ -132,6 +132,10 @@ $(document).ready(function() {
 		applyToRooms(i);
 	};
 
+	$(".closeButton").click(function() {
+		collapseSidebar();
+	})
+	
 	//console.log("floor: " + currentFloor);
 	var currentLocation = defineCurrentLocation();
 	fitToContainer();
