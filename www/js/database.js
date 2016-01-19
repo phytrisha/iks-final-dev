@@ -114,7 +114,7 @@ function addContent (id) {
 				targetSemester[i] = "";
 			}
 			$("#currentLabel").html("<h1 class='" + type + "Color bold horiCenter'>" + type.toUpperCase() + "</h1>");
-			$("#currentProgram").html("<h1 class='bold'>" + fullName + " " + targetSemester[i] + "</h1>");
+			$("#currentProgram").html("<h1>" + fullName + " " + targetSemester[i] + "</h1>");
 
 			$(".semesterContent").html("");
 			if (general[i] != undefined) {
