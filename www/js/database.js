@@ -80,6 +80,7 @@ function displayContent (content) {
 			$(".semesterSelector").append("<div class='semesterClick' id='" + content + i + "'><h1 class='horiCenter bold'>" + i + "</h1></div>");
 		}
 	}
+	$("#" + content + "0").addClass("active");
 	$(".contentView").addClass("active");
 	var selectorMargin = window.screen.width - (max/2) * parseInt($(".semesterClick").css("height"));
 	$(".semesterSelector").css("margin-top", selectorMargin + "px");
@@ -121,7 +122,7 @@ function addContent (id) {
 				$(".semesterContent").append("<p>" + general[i] + "</p>");
 			}
 			$(".semesterContent").append("<div style='height:60px;'></div>");
-			if (titles[i].length != undefined) {
+			if (titles[i] != undefined) {
 				for (var j = 0; j < titles[i].length; j++) {
 					$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
 					$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
@@ -139,8 +140,9 @@ function addContent (id) {
 
 function addClicks () {
 	$(".semesterClick").click(function() {
+		console.log("clicked id: " + this.id);
 		addContent(this.id);
 		$(".semesterClick").removeClass("active");
-		$(this).addClass("active");
+		$("#" + this.id).addClass("active");
 	})
 }

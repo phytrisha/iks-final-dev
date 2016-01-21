@@ -289,7 +289,12 @@ p {
 /* cells */
 
 .programCell {
-	/*width: 100%;*/
+	height: 189px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	list-style: none;
+}
+
+.serviceCell {
 	height: 189px;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	list-style: none;
@@ -345,6 +350,10 @@ p {
 }
 
 .programCell.active {
+	background-color: #eee;
+}
+
+.serviceCell.active {
 	background-color: #eee;
 }
 
