@@ -94,7 +94,6 @@ function generatePopup (semester, pos, num) {
 	}
 
 	var resultingLeftLine = (350 + (leftOffset*(-1)) + rightOffset).clamp(40, 660);
-
 	$("#room" + num).append("<div class='popUp'></div>");
 	$(".popUp").css("left", resultingLeft + "px");
 	$(".popUp").css("top", popUpTop + "px");

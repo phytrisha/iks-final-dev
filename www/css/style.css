@@ -110,14 +110,12 @@ img {
 }
 
 .floorButtons {
-	background-color: rgba(255,255,255,0.95);
-	height: 600px;
+	background-color: rgba(255, 255, 255, 0.95);
+	height: 480px;
 	width: 100%;
-	padding-top: 120px;
-	padding-bottom: 120px;
-	top:50%;
+	top: 50%;
 	position: relative;
-	margin-top: -300px;
+	margin-top: -150px;
 }
 
 .floorButtons.bg {
@@ -445,8 +443,7 @@ p {
 ------------------------------------------ */
 
 .room {
-	background-color: #00ff00;
-	opacity: 0.5;
+	background-color: rgba(0,255,0,0.1);
 	position: absolute;
 	z-index: 10;
 }
