@@ -82,8 +82,8 @@ function generatePopup (semester, pos, num) {
 		resultingLeft+=leftOffset;
 	}
 
-	if ((roomLeft+roomOffset[0] + 350) - (784 - mapLeft) > 1224 )  {
-		rightOffset = (roomLeft+roomOffset[0] + 350) - (784 - mapLeft) - 1224;
+	if ((roomLeft+roomOffset[0] + 350) - (666 - mapLeft) > 1224 )  {
+		rightOffset = (roomLeft+roomOffset[0] + 350) - (666 - mapLeft) - 1224;
 		resultingLeft-=rightOffset;
 	}
 
@@ -92,6 +92,8 @@ function generatePopup (semester, pos, num) {
 		lineHeight-=topOffset;
 		popUpTop += topOffset;
 	}
+
+	var resultingLeftLine = (350 + (leftOffset*(-1)) + rightOffset).clamp(40, 660);
 
 	$("#room" + num).append("<div class='popUp'></div>");
 	$(".popUp").css("left", resultingLeft + "px");
@@ -107,7 +109,7 @@ function generatePopup (semester, pos, num) {
 	$(".popUpRouteButton").append("<div class='popUpIcon' id='routeIcon'></div>");
 	$(".popUpRouteButton").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>Route anzeigen</h1>");
 	$(".popUp").append("<div class='popUpLine'></div>");
-	$(".popUpLine").css("left", 350 + (leftOffset*(-1)) + rightOffset + "px");
+	$(".popUpLine").css("left", resultingLeftLine + "px");
 	$(".popUpLine").css("height", lineHeight + "px");
 }
 
