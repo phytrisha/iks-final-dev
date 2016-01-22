@@ -71,10 +71,6 @@ $(document).ready(function() {
 
 	$(".floorButton").click(function() {
 		closePopUps();
-		/*for (var i = 1; i <= 4; i++) {
-			$("#switch" + i).removeClass("active");
-		};
-		$("#switch" + currentFloor).addClass("active");*/
 		$(".floorButton").removeClass("active");
 		$(this).addClass("active");
 		var floorNumber = this.id.charAt(6);
@@ -88,45 +84,7 @@ $(document).ready(function() {
 			top: "658",
 			opacity: "1"
 		}, 600)
-		/*if (floorNumber == 1) {
-			$("#floor2").animate({
-				top: "-658",
-				opacity: "0"
-			}, 600)
-			$("#floor3").animate({
-				top: "-2194",
-				opacity: "0"
-			}, 600)
-		} else if (floorNumber == 2) {
-			$("#floor1").animate({
-				top: "2194",
-				opacity: "0"
-			}, 600)
-			$("#floor3").animate({
-				top: "-658",
-				opacity: "0"
-			}, 600)
-		} else if (floorNumber == 3) {
-			$("#floor1").animate({
-				top: "3730",
-				opacity: "0"
-			}, 600)
-			$("#floor2").animate({
-				top: "2194",
-				opacity: "0"
-			}, 600)
-		} else if (floorNumber == 4) {
-			$("#floor1").animate({
-				top: "3730",
-				opacity: "0"
-			}, 600)
-			$("#floor2").animate({
-				top: "2194",
-				opacity: "0"
-			}, 600)
-		}*/
-		//currentFloor = floorNumber;
-		loadMap(floorNumber);
+		loadMap(floor);
 	});
 
 	for (var i = 1; i <= roomCount; i++) {
@@ -141,30 +99,4 @@ $(document).ready(function() {
 	var currentLocation = defineCurrentLocation();
 	fitToContainer();
 	giveRoute(currentLocation, 4);
-	
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

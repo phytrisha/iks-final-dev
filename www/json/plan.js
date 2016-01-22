@@ -25,8 +25,8 @@ getInfo([
 			/* ---- Kurs 3: Raum ------- */ "1.02"
 		],
 		"kursBild":[
-			/* ---- Kurs 1: Bild ------- */ "ig1_1.jpg",
-			/* ---- Kurs 2: Bild ------- */ "ig1_2.jpg",
+			/* ---- Kurs 1: Bild ------- */ "",
+			/* ---- Kurs 2: Bild ------- */ "",
 			/* ---- Kurs 3: Bild ------- */ ""
 		]
 	},
@@ -38,25 +38,29 @@ getInfo([
 			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 2",
 			/* ---- Kurs 2: Name ------- */ "Interface Design 1",
 			/* ---- Kurs 3: Name ------- */ "Interaktive Kommunikationssysteme 1",
-			/* ---- Kurs 4: Name ------- */ "Fotografie"
+			/* ---- Kurs 4: Name ------- */ "Fotografie",
+			/* ---- Kurs 5: Name ------- */ "3D-Grundlagen im medialen Raum"
 		],
 		"kursBeschreibung":[
-			/* ---- Kurs 1: Beschreibung */ "In PE 2 wird ein Kalendarium erstellt",
-			/* ---- Kurs 2: Beschreibung */ "In Interface Design 1 kommt der TT",
-			/* ---- Kurs 3: Beschreibung */ "In IKS 1 vermissen wir Roger :(",
-			/* ---- Kurs 4: Beschreibung */ "In Fotografie macht man Fotos mit Oliver Jung"
+			/* ---- Kurs 1: Beschreibung */ "Erwerb praktischer und theoretischer gestalterischer Grundlagen in zeitbasierten und interaktiven Medien durch systematisch kombinierte, komplexitätssteigernd aufeinander bezogene Übungsfolgen. Anfänglich in manueller und fortgesetzt in computer-generierter Bearbeitung.",
+			/* ---- Kurs 2: Beschreibung */ "Die Studierenden bedienten sich in einem iterativen Designprozess der Methoden des Usability Engineering. Ziel war es zunächst die Bedarfe sowie die typischen Aufgaben im Automobil zu identifizieren, um dafür diverse Konzepte für Ein- und Ausgabemedien zu entwickeln. Um die daraus entstandenen Gestaltungslösungen zu überprüfen, wurden bedienbare Funktionsprototypen erstellt.",
+			/* ---- Kurs 3: Beschreibung */ "Interaktive Kommunikationssysteme befasst sich mit der Gestaltung und Entwicklung netzbasierter Services, Remote-Controls oderdidaktischer Lern- und Lehrsysteme zur einfachen Vermitt-lung umfassender Wissensgebiete indefiniertem Kontext (z.B. Ausstellung, Internet, Rauminstallation).",
+			/* ---- Kurs 4: Beschreibung */ "Essentielle Grundlagen der Fotografie werden in der Theorie gelehrt und in Form einer Fotoreihe in einem Projekt umgesetzt. Der Fokus liegt dabei vor allem auf der detaillierten Betrachtung von Fotografien sowie der systematischen Auseinandersetzung mit Komposition und Spannung.",
+			/* ---- Kurs 5: Beschreibung */ "In dem traditionellen dreiwöchigen Workshop, der schon seit über 20 Semestern an der Hochschule für Gestaltung stattfindet, werden mehrere Projekte mit dem Fokus auf ein spezielles Thema oder eine spezielle Technologie erstellt."
 		],
 		"kursRaum":[
 			/* ---- Kurs 1: Raum ------- */ "2.01",
 			/* ---- Kurs 2: Raum ------- */ "2.01",
 			/* ---- Kurs 3: Raum ------- */ "1.02",
-			/* ---- Kurs 4: Raum ------- */ "1.02"
+			/* ---- Kurs 4: Raum ------- */ "1.02",
+			/* ---- Kurs 5: Raum ------- */ "1.02"
 		],
 		"kursBild":[
-			/* ---- Kurs 1: Bild ------- */ "ig1_pe.jpg",
-			/* ---- Kurs 2: Bild ------- */ "",
-			/* ---- Kurs 3: Bild ------- */ "ig1_gg.jpg",
-			/* ---- Kurs 4: Bild ------- */ ""
+			/* ---- Kurs 1: Bild ------- */ "data/ig/ig2/ProgrammiertesEntwerfen2.png",
+			/* ---- Kurs 2: Bild ------- */ "data/ig/ig2/InterfaceDesign1.png",
+			/* ---- Kurs 3: Bild ------- */ "data/ig/ig2/IKS1.jpeg",
+			/* ---- Kurs 4: Bild ------- */ "data/ig/ig2/Fotografie.jpg",
+			/* ---- Kurs 5: Bild ------- */ "data/ig/ig2/3DGrundlagen.png"
 		]
 	},
 		// --------------- Interaktionsgestaltung 3 ---------------

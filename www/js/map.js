@@ -103,7 +103,6 @@ function loadMap (floor) {
 		} else {
 			$(".floorButtons").removeClass("bg");
 		}
-		console.log(mapDim[2]);
 	})
 
 	mapManager.on("pinchstart", function(ev) {
@@ -178,6 +177,18 @@ function applyToRooms (room) {
 	roomManager.on("tap", function() {
 		giveContent(room, roomElement);
 	})
+}
+
+function addPopUpClicks (type) {
+	var elem = document.getElementById('info' + type);
+	var course = type.charAt(0) + type.charAt(1);
+	var clickManager = new Hammer.Manager(elem);
+	var tap = new Hammer.Tap();
+	clickManager.add(tap);
+	clickManager.on("tap", function() {
+		console.log("clicked on info so show: " + type);
+		displayContent(type);
+ 	})
 }
 
 $(document).ready(loadMap(2));

@@ -53,8 +53,8 @@
 
 img {
 	width: 100%;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 /* ------------------------------------------
@@ -166,7 +166,7 @@ h2 {
 	font-size: 35px;
 	font-weight: normal;
 	line-height: 50px;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 }
 
 p {
@@ -405,7 +405,6 @@ p {
 .fixedTitle {
 	position: fixed;
 	width: 903px;
-	padding-bottom: 60px;
 	background-color: #fff;
 }
 
@@ -416,7 +415,8 @@ p {
 
 .fixedTitle > .programTitle {
 	margin-top: 60px;
-	border-bottom-style: none;
+	padding-bottom: 60px;
+	width: 783px;
 }
 
 .semesterContentFrame {
@@ -430,6 +430,7 @@ p {
 	width: 664px;
 	margin-top: 160px;
 	margin-left: 120px;
+	padding-top: 60px;
 }
 
 .closeButton {

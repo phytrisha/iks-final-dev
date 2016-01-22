@@ -96,11 +96,10 @@ function generatePopup (semester, pos, num) {
 	$("#room" + num).append("<div class='popUp'></div>");
 	$(".popUp").css("left", resultingLeft + "px");
 	$(".popUp").css("top", popUpTop + "px");
-	//$(".popUp").css("z-index", 1000);
 	$(".popUp").append("<div class='popUpTitle'></div>");
 	$(".popUpTitle").append("<h1 class='popUpVertCenter " + program + "Color bold floatLeft'>"+ shortName +"</h1>");
 	$(".popUpTitle").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>" + fullName + " " + semesterNum + "</h1>");
-	$(".popUp").append("<div class='popUpInfoButton'></div>");
+	$(".popUp").append("<div class='popUpInfoButton' id='info" + semester + "'></div>");
 	$(".popUpInfoButton").append("<div class='popUpIcon' id='infoIcon'></div>");
 	$(".popUpInfoButton").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>Informationen zu " + shortName + " " + semesterNum + "</h1>");
 	$(".popUp").append("<div class='popUpRouteButton'></div>");
@@ -109,6 +108,8 @@ function generatePopup (semester, pos, num) {
 	$(".popUp").append("<div class='popUpLine'></div>");
 	$(".popUpLine").css("left", resultingLeftLine + "px");
 	$(".popUpLine").css("height", lineHeight + "px");
+
+	addPopUpClicks(semester);
 }
 
 
