@@ -50,6 +50,7 @@ function getBounding (elem) {
 }
 
 function bakeTransform (elem, scaleValue) {
+	console.log("baking transform for " + elem + "at scale value " + scaleValue);
 	var oldWidth = parseInt($(elem).css("width"));
 	var newWidth = oldWidth * scaleValue;
 
@@ -127,6 +128,7 @@ function loadMap (floor) {
 		if (scaling) {
 			resultScale = ev.scale;
 			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
+			scale("#floor" + currentFloor, resultScale);
 			var mapDim = getBounding($("#floor" + currentFloor));
 			var borderValue = (mapDim[2]/2)*resultScale+mapDim[2]/2;
 			if (borderValue > 1928) {
@@ -134,17 +136,15 @@ function loadMap (floor) {
 			} else {
 				$(".floorButtons").removeClass("bg");
 			}
-			scale("#floor" + currentFloor, resultScale);
 		}
-
 	})
 
-	mapManager.on("pinchend", function() {
-		getCurrentMapScale(finalScale);
+	mapManager.on("pinchend pinchcancel", function() {
 		bakeTransform("#floor" + currentFloor, finalScale);
+		getCurrentMapScale(finalScale);
 		var currentLocation = defineCurrentLocation();
 		fitToContainer();
-		giveRoute(currentLocation, 3);
+		//giveRoute(currentLocation, 3);
 		scaling = false;
 	})
 }
@@ -181,7 +181,7 @@ function applyToRooms (room) {
 }
 
 $(document).ready(loadMap(2));
-$(document).ready(scale("#floor" + currentFloor, myElementScale));
+//$(document).ready(scale("#floor" + currentFloor, myElementScale));
 
 
 

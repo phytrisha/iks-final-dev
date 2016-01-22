@@ -70,6 +70,7 @@ $(document).ready(function() {
 	})
 
 	$(".floorButton").click(function() {
+		closePopUps();
 		/*for (var i = 1; i <= 4; i++) {
 			$("#switch" + i).removeClass("active");
 		};
@@ -124,8 +125,8 @@ $(document).ready(function() {
 				opacity: "0"
 			}, 600)
 		}*/
-		currentFloor = floorNumber;
-		loadMap(currentFloor);
+		//currentFloor = floorNumber;
+		loadMap(floorNumber);
 	});
 
 	for (var i = 1; i <= roomCount; i++) {

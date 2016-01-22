@@ -65,9 +65,8 @@ function generatePopup (semester, pos, num) {
 	var popUpLeft = -350 + roomOffset[0];
 	var popUpTop = -419;
 
-	var mapLeft = parseInt($(".mapElement").css("left"));
-	var mapTop = 0;
-	var mapCalcTop = parseInt($(".mapElement").css("top"));
+	var mapLeft = parseInt($("#floor" + currentFloor).css("left"));
+	var mapCalcTop = parseInt($("#floor" + currentFloor).css("top"));
 
 	var resultingLeft;
 
