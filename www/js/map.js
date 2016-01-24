@@ -13,6 +13,8 @@ var scaleMin=0.5;
 var xPercent;
 var yPercent;
 
+var endScale;
+
 Number.prototype.map = function (in_min, in_max, out_min, out_max) {
   return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -23,7 +25,6 @@ Number.prototype.clamp = function(min, max) {
 
 function scale (elem, scaleValue) {
 	$(elem).css("-webkit-transform", "scale(" + scaleValue + ")");
-	//resultScale[iFloor-1] = scaleValue;
 }
 
 function appendTransform (elem, x, y) {
@@ -77,6 +78,8 @@ function loadMap (floor) {
 	var pan = new Hammer.Pan();
 	var tap = new Hammer.Tap();
 
+	var lastScale;
+
 	mapManager.add([tap, pinch, pan]);
 
 	mapManager.on("tap panstart", function() {
@@ -100,6 +103,8 @@ function loadMap (floor) {
 	})
 
 	mapManager.on("pinchstart", function(ev) {
+		lastScale = resultScale[iFloor-1];
+		console.log("log last scale: " + lastScale);
 		closePopUps();
 		var values = getBounding("#floor" + iFloor);
 		var xCenter = ev.center.x;
@@ -114,15 +119,13 @@ function loadMap (floor) {
 
 		$("#floor" + iFloor).css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
 		scaling = true;
-
 	})
 
 	mapManager.on("pinchin pinchout", function(ev) {
 		if (scaling) {
-			var addScale;
-			var lastScale = resultScale[iFloor-1];
-			addScale = ev.scale - lastScale;
-			resultScale[iFloor-1] += (addScale);
+			endScale = ev.scale;
+			resultScale[iFloor-1] = ev.scale;
+			console.log(resultScale[iFloor-1]);
 			scale("#floor" + iFloor, resultScale[iFloor-1]);
 			var mapDim = getBounding($("#floor" + iFloor));
 			var borderValue = (mapDim[2]/2)*resultScale[iFloor-1]+mapDim[2]/2;
@@ -135,7 +138,8 @@ function loadMap (floor) {
 	})
 
 	mapManager.on("pinchend pinchcancel", function() {
-		bakeTransform("#floor" + iFloor, resultScale[iFloor-1]);
+		bakeTransform("#floor" + iFloor, endScale);
+		resultScale[iFloor-1] += (endScale - 1);
 		var currentLocation = defineCurrentLocation();
 		fitToContainer();
 		//giveRoute(currentLocation, 3);
@@ -185,6 +189,10 @@ function addPopUpClicks (type) {
 		displayContent(type);
  	})
 }
+
+window.setInterval(function() {
+	//console.log(resultScale);
+}, 500);
 
 
 

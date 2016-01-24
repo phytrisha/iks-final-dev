@@ -66,11 +66,9 @@ $(".programCell").click(function() {
 })
 
 function displayContent (content) {
-	console.log($(".contentView"));
 	$(".semesterSelector").html("");
 	var max = 8;
 	var course = content.charAt(0) + content.charAt(1);
-	console.log(course);
 	if (course == "sg") {
 		max = 4;
 	} else if (course == "io") {
@@ -92,48 +90,73 @@ function displayContent (content) {
 }
 
 function addContent (id) {
-	console.log(id);
+	//console.log(id);
 	for (var i = 0; i < selector.length; i++) {
 		if (selector[i] == id) {
 			var equalRoom = false;
 			var type = id.charAt(0) + id.charAt(1);
 			var fullName;
+			if (type != "io") {
+				type = type.toUpperCase();
+			} else {
+				type = "IoT"
+			}
 			switch(type) {
-				case "ig":
+				case "IG":
 					fullName="Interaktionsgestaltung";
 					break;
-				case "kg":
+				case "KG":
 					fullName="Kommunikationsgestaltung";
 					break;
-				case "pg":
+				case "PG":
 					fullName="Produktgestaltung";
 					break;
-				case "io":
+				case "IoT":
 					fullName="Internet der Dinge";
 					break;
-				case "sg":
+				case "SG":
 					fullName="Strategische Gestaltung";
 					break;
 			}
 			if (targetSemester[i] == "0") {
 				targetSemester[i] = "";
 			}
-			$("#currentLabel").html("<h1 class='" + type + "Color bold horiCenter'>" + type.toUpperCase() + "</h1>");
+			$("#currentLabel").html("<h1 class='" + type.toLowerCase() + "Color bold horiCenter'>" + type + "</h1>");
 			$("#currentProgram").html("<h1>" + fullName + " " + targetSemester[i] + "</h1>");
 
 			$(".semesterContent").html("");
 			if (general[i] != undefined) {
+				$(".semesterContent").addClass("unspecific");
 				$(".semesterContent").append("<p>" + general[i] + "</p>");
 			}
 			if (titles[i] != undefined) {
+				var sameRooms = true;
+				for (var j = 0; j < rooms[i].length; j++) {
+					for (var k = 0; k < rooms[i].length; k++) {
+						if (rooms[i][j] != rooms[i][k]) {
+							sameRooms = false;
+						}
+					};
+				};
+				if (sameRooms) {
+					$(".semesterContent").removeClass("unspecific");
+					$(".semesterContent").append("<div class='sidebarRouteButton'></div>");
+					$(".sidebarRouteButton").append("<div class='sidebarRouteIcon' id='routeIcon'></div>");
+					$(".sidebarRouteButton").append("<p class='sidebarRouteLabel'>Route zu Raum " + rooms[i][0] + " anzeigen</p>");
+				} else {
+					$(".semesterContent").addClass("unspecific");
+				}
 				for (var j = 0; j < titles[i].length; j++) {
-					$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");
-					$(".semesterContent").append("<p>Raum: " + rooms[i][j] + "</p>");
+					$(".semesterContent").append("<h2>Kurs: " + titles[i][j] + "</h2>");					
 					if (images[i][j] != "") {
 						$(".semesterContent").append("<img src='img/" + images[i][j] + "'>");
 					}
+					if (sameRooms == false) {
+						$(".semesterContent").append("<div class='sidebarRouteButton unspecific' id='sidebarRouteTo"+ j +"'></div>");
+						$("#sidebarRouteTo" + j).append("<div class='sidebarRouteIcon' id='routeIcon'></div>");
+						$("#sidebarRouteTo" + j).append("<p class='sidebarRouteLabel'>Route zu Raum " + rooms[i][j] + " anzeigen</p>");						
+					}
 					$(".semesterContent").append("<p>Beschreibung: " + descriptions[i][j] + "</p>");
-					//giveDirections(rooms[i][j]);
 					$(".semesterContent").append("<div style='height:60px;'></div>");
 				}
 			}

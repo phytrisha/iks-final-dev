@@ -10,7 +10,7 @@ getInfo([
 		"studiengang":"ig",
 		"semester":"1",
 		"kurse":[
-			/* ---- Kurs 1: Name ------- */ "Programmiertes Entwerfen 1",
+			/* ---- Kurs 1: Name ------- */ "Medientechnologien",
 			/* ---- Kurs 2: Name ------- */ "Einführung in die Gestaltungsschwerpunkte",
 			/* ---- Kurs 3: Name ------- */ "Typografie 1"
 		],
@@ -25,9 +25,9 @@ getInfo([
 			/* ---- Kurs 3: Raum ------- */ "1.02"
 		],
 		"kursBild":[
-			/* ---- Kurs 1: Bild ------- */ "",
-			/* ---- Kurs 2: Bild ------- */ "",
-			/* ---- Kurs 3: Bild ------- */ ""
+			/* ---- Kurs 1: Bild ------- */ "data/ig/ig1/Medientechnologien.jpg",
+			/* ---- Kurs 2: Bild ------- */ "data/ig/ig1/EinfuehrungInDieGestaltungsschwerpunkte.png",
+			/* ---- Kurs 3: Bild ------- */ "data/ig/ig1/Typografie.jpg"
 		]
 	},
 	// --------------- Interaktionsgestaltung 2 ---------------
@@ -49,8 +49,8 @@ getInfo([
 			/* ---- Kurs 5: Beschreibung */ "In dem traditionellen dreiwöchigen Workshop, der schon seit über 20 Semestern an der Hochschule für Gestaltung stattfindet, werden mehrere Projekte mit dem Fokus auf ein spezielles Thema oder eine spezielle Technologie erstellt."
 		],
 		"kursRaum":[
-			/* ---- Kurs 1: Raum ------- */ "2.01",
-			/* ---- Kurs 2: Raum ------- */ "2.01",
+			/* ---- Kurs 1: Raum ------- */ "1.02",
+			/* ---- Kurs 2: Raum ------- */ "1.02",
 			/* ---- Kurs 3: Raum ------- */ "1.02",
 			/* ---- Kurs 4: Raum ------- */ "1.02",
 			/* ---- Kurs 5: Raum ------- */ "1.02"

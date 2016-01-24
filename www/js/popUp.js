@@ -104,26 +104,3 @@ function generatePopup (semester, pos, num) {
 
 	addPopUpClicks(semester);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

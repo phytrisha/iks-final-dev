@@ -30,7 +30,7 @@
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #7f7f7f;
-	z-index: 20;
+	z-index: 50;
 }
 
 .contentView {
@@ -43,7 +43,7 @@
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #7f7f7f;
-	z-index: 10;
+	z-index: 20;
 	-webkit-transition: left 0.5s;
 }
 
@@ -67,6 +67,7 @@ img {
 	top:-1000px;
 	left:900px;
 	position: fixed;
+	z-index: 10;
 	/*-webkit-transition: -webkit-transform 0.2s;
 	-webkit-transition: -webkit-transform-origin 0.2s;*/
 	background-repeat: no-repeat;
@@ -107,6 +108,7 @@ img {
 	width: 120px;
 	height: 100%;
 	position: fixed;
+	z-index: 999;
 }
 
 .floorButtons {
@@ -408,6 +410,7 @@ p {
 	position: fixed;
 	width: 903px;
 	background-color: #fff;
+	z-index: 60;
 }
 
 .fixedTitle > .programLabel {
@@ -432,6 +435,9 @@ p {
 	width: 664px;
 	margin-top: 160px;
 	margin-left: 120px;
+}
+
+.semesterContent.unspecific {
 	padding-top: 60px;
 }
 
@@ -442,12 +448,41 @@ p {
 	top: 18px;
 	left: 904px;
 	margin: 40px;
+	z-index: 999;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 #closeIcon {
 	background-image: url(../img/icons/close.svg);
+}
+
+.sidebarRouteButton {
+	width: 783px;
+	height: 140px;
+	margin-bottom:60px;
+	border-bottom-style: solid;
+	border-color: #7f7f7f;
+	border-width: 1px;
+}
+
+.sidebarRouteButton.unspecific {
+	margin-top: 60px;
+	border-top-style: solid;
+}
+
+.sidebarRouteIcon {
+	width: 65px;
+	height: 65px;
+	float: left;
+	margin-right: 40px;
+	position: relative;
+	top: 38px;
+}
+
+.sidebarRouteLabel {
+	position: relative;
+	top:45px;
 }
 
 /* ------------------------------------------
