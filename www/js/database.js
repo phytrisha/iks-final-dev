@@ -32,18 +32,18 @@ function getDirections (data) {
 }
 
 function giveDirections (room) {
-	var currentFloor = originalFloor;
+	//var currentFloor = originalFloor;
 	for (var i = 0; i < referenceRoom.length; i++) {
 		if (room == referenceRoom[i]) {
 			$(".content").append("<h2>Directions: </h2>");
 			var targetFloor = parseInt(referenceRoom[i].charAt(0));
-			while (targetFloor != currentFloor) {
-				if (targetFloor > currentFloor) {
+			while (targetFloor != iFloor) {
+				if (targetFloor > iFloor) {
 					$(".content").append("<h2>go up</h2>");
-					currentFloor++;
-				} else if (targetFloor < currentFloor) {
+					iFloor++;
+				} else if (targetFloor < iFloor) {
 					$(".content").append("<h2>go down</h2>");
-					currentFloor--;
+					iFloor--;
 				}
 			}
 			for (var j = 0; j < directions[j].length; j++) {

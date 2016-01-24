@@ -57,6 +57,8 @@ function fitToContainer(){
 }
 
 $(document).ready(function() {
+	//var mapDimensions = getMapImgDimensions(2);
+	//console.log("map dimensions are " + mapDimensions);
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){
 		activateContent("services", "programs");
@@ -65,26 +67,14 @@ $(document).ready(function() {
 	$("#programsSidebar").click(function(){
 		activateContent("programs", "services");
 	});
-	$(".popUpInfoButton").click(function() {
-		//generatePopup();
-	})
 
 	$(".floorButton").click(function() {
 		closePopUps();
 		$(".floorButton").removeClass("active");
 		$(this).addClass("active");
-		var floorNumber = this.id.charAt(6);
-		for (var i = 1; i <= 4; i++) {
-			$("#floor" + i).animate({
-				top:"-658",
-				opacity:"0"
-			}, 600)
-		};
-		$( "#floor" + floorNumber).animate({
-			top: "658",
-			opacity: "1"
-		}, 600)
-		loadMap(floor);
+		setFloor(parseInt(this.id.charAt(6)));
+		goToFloor();
+		loadMap(iFloor);
 	});
 
 	for (var i = 1; i <= roomCount; i++) {
@@ -95,8 +85,12 @@ $(document).ready(function() {
 		collapseSidebar();
 	})
 	
+
 	//console.log("floor: " + currentFloor);
-	var currentLocation = defineCurrentLocation();
-	fitToContainer();
-	giveRoute(currentLocation, 4);
+	//var currentLocation = defineCurrentLocation();
+	//fitToContainer();
+	//giveRoute(currentLocation, 4);
+	setBuilding("B");
+	console.log("building: " + iBuilding);
+	//console.log("floor: " + currentFloor);
 })

@@ -116,11 +116,13 @@ img {
 	top: 50%;
 	position: relative;
 	margin-top: -150px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	-webkit-transition: border-color 0.1s;
 }
 
 .floorButtons.bg {
-	border-style: solid;
-	border-width: 1px;
 	border-color: #7f7f7f;
 }
 

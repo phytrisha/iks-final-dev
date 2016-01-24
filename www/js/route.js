@@ -65,22 +65,22 @@ function giveRoute (pos, target) {
 
 		// GOING LEFT
 		for (var i = 1; i < hallCount; i++) {
-			console.log("pos1: " + pos[1]);
-			console.log("hallY" + i + ": " + hallY[i]);
+			//console.log("pos1: " + pos[1]);
+			//console.log("hallY" + i + ": " + hallY[i]);
 			if (pos[1] == hallY[i]) {
 				endX = roomPosition[0];
-				console.log("endX: " + endX);
-				console.log("youre on hallway " + i);
-				console.log(getCenter("room" + target));
+				//console.log("endX: " + endX);
+				//console.log("youre on hallway " + i);
+				//console.log(getCenter("room" + target));
 			}
 		};
 
 		if (pos[0] > roomPosition[0]) {
-			console.log("too far right!");
+			//console.log("too far right!");
 			goLeft=true;
 		}
 
-		console.log("pos: " + pos);
+		//console.log("pos: " + pos);
 /*
 		while (goLeft == true) {
 			pos[0]--;

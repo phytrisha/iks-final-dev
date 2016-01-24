@@ -1,5 +1,6 @@
 placeRooms([
 	{
+		"building":"B",
 		"room":"0.01",
 		"semester":"kg1",
 		"width": "24.6%",
@@ -9,6 +10,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"0.02",
 		"semester":"kg1",
 		"width": "3.2%",
@@ -18,6 +20,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.01",
 		"semester":"kg2",
 		"width": "7.4%",
@@ -27,6 +30,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.02",
 		"semester":"ig2",
 		"width": "7.4%",
@@ -36,6 +40,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.03",
 		"semester":"pg2",
 		"width": "34.5%",
@@ -45,6 +50,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.04",
 		"semester":"kg1",
 		"width": "15.2%",
@@ -54,6 +60,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.05",
 		"semester":"ig2",
 		"width": "7.4%",
@@ -63,6 +70,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.06",
 		"semester":"ig2",
 		"width": "6%",
@@ -72,6 +80,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.07",
 		"semester":"ig2",
 		"width": "3%",
@@ -81,6 +90,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.08",
 		"semester":"kg1",
 		"width": "13.3%",
@@ -90,6 +100,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.09",
 		"semester":"kg1",
 		"width": "4.5%",
@@ -99,6 +110,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"1.10",
 		"semester":"kg1",
 		"width": "4.5%",
@@ -108,6 +120,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"2.01",
 		"semester":"pg2",
 		"width": "30.5%",
@@ -117,6 +130,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"2.03",
 		"semester":"ig2",
 		"width": "12.7%",
@@ -126,6 +140,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"2.04",
 		"semester":"ig2",
 		"width": "6.5%",
@@ -135,6 +150,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"2.05",
 		"semester":"ig2",
 		"width": "4.5%",
@@ -144,6 +160,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"2.06",
 		"semester":"kg1",
 		"width": "3.2%",
@@ -153,6 +170,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.01",
 		"semester":"pg2",
 		"width": "7.3%",
@@ -162,6 +180,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.03",
 		"semester":"ig2",
 		"width": "12.7%",
@@ -171,6 +190,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.04",
 		"semester":"ig2",
 		"width": "6.5%",
@@ -180,6 +200,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.05",
 		"semester":"ig2",
 		"width": "4.5%",
@@ -189,6 +210,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.06",
 		"semester":"pg2",
 		"width": "10.4%",
@@ -198,6 +220,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.07",
 		"semester":"pg2",
 		"width": "12.8%",
@@ -207,6 +230,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.08",
 		"semester":"pg2",
 		"width": "12.8%",
@@ -216,6 +240,7 @@ placeRooms([
 		"rotation":"0"
 	},
 	{
+		"building":"B",
 		"room":"3.09",
 		"semester":"kg1",
 		"width": "3.2%",

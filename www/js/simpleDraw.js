@@ -12,7 +12,7 @@ function createLine (startX, startY, endX, endY, color, line) {
 	ctx.lineTo(endX,endY);
 	ctx.lineWidth=line*scaleValue;
 	ctx.stroke();
-	console.log("--- draw end");
+	//console.log("--- draw end");
 }
 
 function createPath (points, color, line) {
@@ -28,7 +28,7 @@ function createPath (points, color, line) {
 	};
 	ctx.lineWidth=line*scaleValue;
 	ctx.stroke();
-	console.log("--- draw end");
+	//console.log("--- draw end");
 }
 
 function createCircle (x, y, radius, color, line, fill) {
