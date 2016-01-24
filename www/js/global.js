@@ -1,16 +1,19 @@
 var iBuilding = "";
-var iFloor = 0;
+var iFloor = 1;
+var floorCount;
 
 function setBuilding (building) {
 	switch (building) {
 		case "B":
 			// do something
 			iBuilding = "B";
+			floorCount = 4;
 			// display correct map etc
 			break;
 		case "H":
 			// do something else
 			iBuilding = "H";
+			floorCount = 3;
 			// display correct map etc
 			break;
 		default:
@@ -19,24 +22,5 @@ function setBuilding (building) {
 }
 
 function setFloor (floor) {
-	switch (floor) {
-		case 1:
-			iFloor = 1;
-			// do something
-			break;
-		case 2:
-			iFloor = 2;
-			// do something
-			break;
-		case 3:
-			iFloor = 3;
-			// do something
-			break;
-		case 4:
-			iFloor = 4;
-			// do something
-			break;
-		default:
-			// do something
-	}
+	iFloor = floor;
 }

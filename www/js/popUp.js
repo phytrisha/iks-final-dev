@@ -1,10 +1,3 @@
-var scaleValue=1;
-
-function getCurrentMapScale (scale) {
-	scaleValue += (scale-1);
-	console.log(scaleValue);
-}
-
 function giveRoomDimensions (input) {
 	var dimensions = [];
 	dimensions[0] = parseInt($("#room" + input).css("width")) / 2;

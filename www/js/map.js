@@ -1,5 +1,4 @@
-var myElementScale = 1.0;
-var resultScale = myElementScale;
+var resultScale = [1.0, 1.0, 1.0, 1.0];
 var scaling = false;
 
 var resultX;
@@ -10,8 +9,6 @@ var startY;
 
 var scaleMax=2.0;
 var scaleMin=0.5;
-
-var finalScale = 1.0;
 
 var xPercent;
 var yPercent;
@@ -26,7 +23,7 @@ Number.prototype.clamp = function(min, max) {
 
 function scale (elem, scaleValue) {
 	$(elem).css("-webkit-transform", "scale(" + scaleValue + ")");
-	finalScale = scaleValue;
+	//resultScale[iFloor-1] = scaleValue;
 }
 
 function appendTransform (elem, x, y) {
@@ -122,11 +119,13 @@ function loadMap (floor) {
 
 	mapManager.on("pinchin pinchout", function(ev) {
 		if (scaling) {
-			resultScale = ev.scale;
-			resultScale = Math.min(Math.max(parseFloat(resultScale), scaleMin), scaleMax);
-			scale("#floor" + iFloor, resultScale);
+			var addScale;
+			var lastScale = resultScale[iFloor-1];
+			addScale = ev.scale - lastScale;
+			resultScale[iFloor-1] += (addScale);
+			scale("#floor" + iFloor, resultScale[iFloor-1]);
 			var mapDim = getBounding($("#floor" + iFloor));
-			var borderValue = (mapDim[2]/2)*resultScale+mapDim[2]/2;
+			var borderValue = (mapDim[2]/2)*resultScale[iFloor-1]+mapDim[2]/2;
 			if (borderValue > 1928) {
 				$(".floorButtons").addClass("bg");
 			} else {
@@ -136,8 +135,7 @@ function loadMap (floor) {
 	})
 
 	mapManager.on("pinchend pinchcancel", function() {
-		bakeTransform("#floor" + iFloor, finalScale);
-		getCurrentMapScale(finalScale);
+		bakeTransform("#floor" + iFloor, resultScale[iFloor-1]);
 		var currentLocation = defineCurrentLocation();
 		fitToContainer();
 		//giveRoute(currentLocation, 3);
@@ -187,11 +185,6 @@ function addPopUpClicks (type) {
 		displayContent(type);
  	})
 }
-//$(document).ready(scale("#floor" + currentFloor, myElementScale));
-
-
-
-
 
 
 

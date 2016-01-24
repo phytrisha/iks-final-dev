@@ -49,16 +49,19 @@ function giveContent (room, elem) {
 }
 
 function fitToContainer(){
-	var canvas = document.getElementById("myCanvas");
+	//var canvas = document.getElementById("myCanvas");
 	var width = parseInt($(".mapElement.active").css("width"));
 	var height = parseInt($(".mapElement.active").css("height"));
-	canvas.width = width;
-	canvas.height = height;
+	//canvas.width = width;
+	//canvas.height = height;
 }
 
 $(document).ready(function() {
-	//var mapDimensions = getMapImgDimensions(2);
-	//console.log("map dimensions are " + mapDimensions);
+	setBuilding("B");
+	setFloor(1);
+	goToFloor();
+	loadMap(iFloor);
+
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){
 		activateContent("services", "programs");
@@ -84,13 +87,4 @@ $(document).ready(function() {
 	$(".closeButton").click(function() {
 		collapseSidebar();
 	})
-	
-
-	//console.log("floor: " + currentFloor);
-	//var currentLocation = defineCurrentLocation();
-	//fitToContainer();
-	//giveRoute(currentLocation, 4);
-	setBuilding("B");
-	console.log("building: " + iBuilding);
-	//console.log("floor: " + currentFloor);
 })
