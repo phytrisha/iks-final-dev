@@ -7,9 +7,6 @@ var resultY;
 var startX;
 var startY;
 
-var scaleMax=2.0;
-var scaleMin=0.5;
-
 var xPercent;
 var yPercent;
 
@@ -51,6 +48,7 @@ function getBounding (elem) {
 }
 
 function bakeTransform (elem, scaleValue) {
+	// console.log("baking scale: " + scaleValue);
 	// calculate new dimensions after scaling
 	var newWidth = parseInt($(elem).css("width")) * scaleValue;
 	var newLeft = parseInt($(elem).css("left")) - ((newWidth - parseInt($(elem).css("width"))) * (xPercent/100));
@@ -104,7 +102,6 @@ function loadMap (floor) {
 
 	mapManager.on("pinchstart", function(ev) {
 		lastScale = resultScale[iFloor-1];
-		console.log("log last scale: " + lastScale);
 		closePopUps();
 		var values = getBounding("#floor" + iFloor);
 		var xCenter = ev.center.x;
@@ -124,9 +121,9 @@ function loadMap (floor) {
 	mapManager.on("pinchin pinchout", function(ev) {
 		if (scaling) {
 			endScale = ev.scale;
-			resultScale[iFloor-1] = ev.scale;
-			console.log(resultScale[iFloor-1]);
-			scale("#floor" + iFloor, resultScale[iFloor-1]);
+			console.log("last scale: " + lastScale);
+			console.log("current scale: " + ev.scale);
+			scale("#floor" + iFloor, ev.scale);
 			var mapDim = getBounding($("#floor" + iFloor));
 			var borderValue = (mapDim[2]/2)*resultScale[iFloor-1]+mapDim[2]/2;
 			if (borderValue > 1928) {
@@ -138,8 +135,8 @@ function loadMap (floor) {
 	})
 
 	mapManager.on("pinchend pinchcancel", function() {
+		resultScale[iFloor-1] = lastScale * endScale;
 		bakeTransform("#floor" + iFloor, endScale);
-		resultScale[iFloor-1] += (endScale - 1);
 		var currentLocation = defineCurrentLocation();
 		fitToContainer();
 		//giveRoute(currentLocation, 3);
@@ -191,7 +188,7 @@ function addPopUpClicks (type) {
 }
 
 window.setInterval(function() {
-	//console.log(resultScale);
+	console.log(resultScale[iFloor-1]);
 }, 500);
 
 

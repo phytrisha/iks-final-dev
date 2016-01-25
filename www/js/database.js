@@ -13,15 +13,15 @@ var referenceRoom = [];
 var originalFloor = 0;
 
 function getInfo (data) {
-	 for(var i = 0; i<data.length; i++) {
-		  selector[i] = data[i].studiengang + data[i].semester;
-		  targetSemester[i] = data[i].semester;
-		  general[i] = data[i].allgemein;
-		  titles[i] = data[i].kurse;
-		  descriptions[i] = data[i].kursBeschreibung;
-		  rooms[i] = data[i].kursRaum;
-		  images[i] = data[i].kursBild;
-	 }
+	for(var i = 0; i<data.length; i++) {
+		selector[i] = data[i].studiengang + data[i].semester;
+		targetSemester[i] = data[i].semester;
+		general[i] = data[i].allgemein;
+		titles[i] = data[i].kurse;
+		descriptions[i] = data[i].kursBeschreibung;
+		rooms[i] = data[i].kursRaum;
+		images[i] = data[i].kursBild;
+	}
 }
 
 function getDirections (data) {
