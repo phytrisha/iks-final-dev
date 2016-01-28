@@ -24,5 +24,4 @@ function populateFloors (count) {
 			setFloor(setFloorTo);
 		})
 	};
-	
 }

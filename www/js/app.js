@@ -26,12 +26,24 @@ function activateCell (cell) {
 }
 
 function placeRooms (data) {
+	var xmlhttp = new XMLHttpRequest();
+	var url = "roomLocation.txt";
 	roomCount = data.length;
 
 	for (var i = 0; i < data.length; i++) {
+		var building = data[i].building;
 		var j = i + 1;
 		var placeToFloor = parseInt(data[i].room.charAt(0)) + 1;
-		$("#floor" + placeToFloor).append("<div class='room' id='room" + j + "'></div>");
+		switch (building) {
+			case "B":
+				var placeToBuilding = ".trainstation";
+				break;
+			case "H":
+				var placeToBuilding = ".rks";
+				break;
+		}
+		console.log("put room to building: " + placeToBuilding);
+		$(placeToBuilding + "#floor" + placeToFloor).append("<div class='room' id='room" + j + "'></div>");
 		$("#room" + j).css("width", data[i].width);
 		$("#room" + j).css("height", data[i].height);
 		$("#room" + j).css("left", data[i].left);
@@ -57,8 +69,8 @@ function fitToContainer(){
 }
 
 $(document).ready(function() {
-	goToFloor();
-	loadMap(iFloor);
+	//goToFloor();
+	//loadMap(iFloor);
 
 	activateContent("programs", "services");
 	$("#servicesSidebar").click(function(){

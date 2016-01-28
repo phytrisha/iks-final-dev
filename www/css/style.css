@@ -86,20 +86,32 @@ img {
 	top: 658px; 
 }
 
-#floor1 {
+.trainstation#floor1 {
 	background-image: url(../img/maps/train_map_0.svg);
 }
 
-#floor2 {
+.trainstation#floor2 {
 	background-image: url(../img/maps/train_map_1.svg);
 }
 
-#floor3 {
+.trainstation#floor3 {
 	background-image: url(../img/maps/train_map_2.svg);
 }
 
-#floor4 {
+.trainstation#floor4 {
 	background-image: url(../img/maps/train_map_3.svg);
+}
+
+.rks#floor1 {
+	background-image: url(../img/maps/rks_map_0.svg);
+}
+
+.rks#floor2 {
+	background-image: url(../img/maps/rks_map_1.svg);
+}
+
+.rks#floor3 {
+	background-image: url(../img/maps/rks_map_2.svg);
 }
 
 .floorSwitcher {
@@ -615,6 +627,9 @@ p {
 	text-align: center;
 	padding-top: 65px;
 	padding-bottom: 65px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
 }
 
 .buildingSelector {
@@ -652,9 +667,9 @@ p {
 	height: 200px;
 	background-color: white;
 	float: right;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #7f7f7f;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
 }
 
 .settingsTypo {
@@ -667,9 +682,9 @@ p {
 	height: 200px;
 	background-color: white;
 	float: left;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #7f7f7f;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #7f7f7f;
 }
 
 
