@@ -15,10 +15,31 @@
 		<script type="text/javascript" src="js/simpleDraw.js"></script>
 		<script type="text/javascript" src="js/mapImg.js"></script>
 		<script type="text/javascript" src="js/floors.js"></script>
+		<script type="text/javascript" src="js/settings.js"></script>
+
 	</head>
 	
 	<body>
-		<div class="viewContainer">
+		<div class="settingsContainer">
+			<div class="settingsHeader">
+				<h1>Hochschule für Gestaltung - Informations- und Navigationssytem</h1>
+			</div>
+			<div class="buildingSelector">
+				<div class="settingsButton" id="H">
+					<h1 class="settingsTypo">Hauptgebäude</h1>
+				</div>
+				<div class="settingsButton" id="B">
+					<h1 class="settingsTypo">Bahnhofsgebäude</h1>
+				</div>
+			</div>
+			<div class="floorSelector">
+
+			</div>
+			<div class="saveSettings">
+				<h1 class="settingsSave bold">Speichern</h1>
+			</div>
+		</div>
+		<div class="viewContainer" style="display: none;">
 			<div class="mapView">
 				<div class="mapElement lower" id="floor1">
 					<!--<canvas id="myCanvas" width="500" height="100" style="float:left;"></canvas>
@@ -196,9 +217,6 @@
 		<script type="text/javascript" src="json/plan.js"></script>
 		<script type="text/javascript" src="json/rooms.js"></script>
 		<script type="text/javascript" src="json/roomLocation.js"></script>
-		
-
-
 
 	</body>
 </html>

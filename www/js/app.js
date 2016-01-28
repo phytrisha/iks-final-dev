@@ -57,8 +57,6 @@ function fitToContainer(){
 }
 
 $(document).ready(function() {
-	setBuilding("B");
-	setFloor(1);
 	goToFloor();
 	loadMap(iFloor);
 

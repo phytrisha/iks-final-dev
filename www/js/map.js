@@ -13,11 +13,11 @@ var yPercent;
 var endScale;
 
 Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-  return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+	return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 Number.prototype.clamp = function(min, max) {
-  return Math.min(Math.max(this, min), max);
+	return Math.min(Math.max(this, min), max);
 };
 
 function scale (elem, scaleValue) {
@@ -48,7 +48,6 @@ function getBounding (elem) {
 }
 
 function bakeTransform (elem, scaleValue) {
-	// console.log("baking scale: " + scaleValue);
 	// calculate new dimensions after scaling
 	var newWidth = parseInt($(elem).css("width")) * scaleValue;
 	var newLeft = parseInt($(elem).css("left")) - ((newWidth - parseInt($(elem).css("width"))) * (xPercent/100));
@@ -186,31 +185,6 @@ function addPopUpClicks (type) {
 		displayContent(type);
  	})
 }
-
-window.setInterval(function() {
-	console.log(resultScale[iFloor-1]);
-}, 500);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

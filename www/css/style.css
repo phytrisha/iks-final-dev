@@ -598,12 +598,79 @@ p {
 }
 
 
+/* ------------------------------------------
+-- SETTINGS ---------------------------------
+------------------------------------------ */
 
+.settingsContainer {
+	width: 2048px;
+	height: 1536px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+}
 
+.settingsHeader {
+	width: 100%;
+	text-align: center;
+	padding-top: 65px;
+	padding-bottom: 65px;
+}
 
+.buildingSelector {
+	width: 50%;
+	height: 60%;
+	float: left;
+	background-color: #fff;
+}
 
+.floorSelector {
+	width: 50%;
+	height: 60%;
+	float: left;
+	background-color: #fff;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #7f7f7f;
+}
 
+.saveSettings {
+	width: 1600px;
+	margin: auto;
+	height: 20%;
+	clear: both;
+	background-color: #fff;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #7f7f7f;
+	text-align: center;
+	padding-top: 65px;
+}
 
+.settingsButton {
+	width: 800px;
+	height: 200px;
+	background-color: white;
+	float: right;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #7f7f7f;
+}
+
+.settingsTypo {
+	margin: 83px;
+	position: absolute;
+}
+
+.floorSettingsButton {
+	width: 800px;
+	height: 200px;
+	background-color: white;
+	float: left;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #7f7f7f;
+}
 
 
 

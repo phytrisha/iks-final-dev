@@ -3,6 +3,7 @@ var iFloor = 1;
 var floorCount;
 
 function setBuilding (building) {
+	console.log("set building to " + building);
 	switch (building) {
 		case "B":
 			// do something
@@ -22,5 +23,6 @@ function setBuilding (building) {
 }
 
 function setFloor (floor) {
+	console.log("set floor to " + floor);
 	iFloor = floor;
 }
