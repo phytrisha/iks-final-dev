@@ -1,4 +1,4 @@
-placeRooms([
+getRoomData([
 	{
 		"building":"B",
 		"room":"0.01",
@@ -246,6 +246,16 @@ placeRooms([
 		"width": "3.2%",
 		"height": "24%",
 		"left": "54.6%",
+		"top": "2%",
+		"rotation":"0"
+	},
+	{
+		"building":"H",
+		"room":"1.09",
+		"semester":"kg1",
+		"width": "80%",
+		"height": "80%",
+		"left": "2%",
 		"top": "2%",
 		"rotation":"0"
 	}

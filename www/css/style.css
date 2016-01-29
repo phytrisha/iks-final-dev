@@ -624,9 +624,7 @@ p {
 
 .settingsHeader {
 	width: 100%;
-	text-align: center;
-	padding-top: 65px;
-	padding-bottom: 65px;
+	height: 200px;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: #7f7f7f;
@@ -650,14 +648,14 @@ p {
 }
 
 .saveSettings {
-	width: 1600px;
+	width: 800px;
 	margin: auto;
-	height: 20%;
+	height: 160px;
 	clear: both;
 	background-color: #fff;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #7f7f7f;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7f7f7f;
 	text-align: center;
 	padding-top: 65px;
 }
@@ -687,7 +685,14 @@ p {
 	border-bottom-color: #7f7f7f;
 }
 
-
+.hfgLogo {
+	width: 398px;
+	height: 199px;
+	left: 180px;
+	position: absolute;
+	background-image: url(../img/hfglogo.png);
+	background-size: 100% 100%;
+}
 
 
 

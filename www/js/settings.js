@@ -6,6 +6,11 @@ $(document).ready(function() {
 		populateFloors(floorCount);
 	})
 	$(".saveSettings").click(function() {
+		
+		placeRooms(roomData);
+		for (var i = 1; i <= roomCount; i++) {
+			//applyToRooms(i);
+		};
 		goToFloor();
 		loadMap(iFloor);
 		$(".viewContainer").css("display", "initial");

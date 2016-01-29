@@ -1,6 +1,7 @@
 var roomCount;
 var roomArray = [];
 var semesterArray = [];
+var roomData = [];
 
 function activateContent (active, deactive) {
 	$("." + active + "Content").addClass("active");
@@ -25,32 +26,37 @@ function activateCell (cell) {
 	}
 }
 
+function getRoomData (data) {
+	roomData = data;
+}
+
 function placeRooms (data) {
-	var xmlhttp = new XMLHttpRequest();
-	var url = "roomLocation.txt";
 	roomCount = data.length;
 
 	for (var i = 0; i < data.length; i++) {
 		var building = data[i].building;
 		var j = i + 1;
 		var placeToFloor = parseInt(data[i].room.charAt(0)) + 1;
-		switch (building) {
-			case "B":
-				var placeToBuilding = ".trainstation";
-				break;
-			case "H":
-				var placeToBuilding = ".rks";
-				break;
+		if (building == iBuilding) {
+			switch (building) {
+				case "B":
+					var placeToBuilding = ".trainstation";
+					break;
+				case "H":
+					var placeToBuilding = ".rks";
+					break;
+			}
+			console.log("put room to building: " + placeToBuilding);
+			$(placeToBuilding + "#floor" + placeToFloor).append("<div class='room' id='room" + j + "'></div>");
+			$("#room" + j).css("width", data[i].width);
+			$("#room" + j).css("height", data[i].height);
+			$("#room" + j).css("left", data[i].left);
+			$("#room" + j).css("top", data[i].top);
+			$("#room" + j).css("-webkit-transform", "rotate(" + data[i].rotation + "deg)");
+			roomArray[i] = data[i].room;
+			semesterArray[i] = data[i].semester;	
 		}
-		console.log("put room to building: " + placeToBuilding);
-		$(placeToBuilding + "#floor" + placeToFloor).append("<div class='room' id='room" + j + "'></div>");
-		$("#room" + j).css("width", data[i].width);
-		$("#room" + j).css("height", data[i].height);
-		$("#room" + j).css("left", data[i].left);
-		$("#room" + j).css("top", data[i].top);
-		$("#room" + j).css("-webkit-transform", "rotate(" + data[i].rotation + "deg)");
-		roomArray[i] = data[i].room;
-		semesterArray[i] = data[i].semester;
+		
 	};
 }
 
@@ -89,10 +95,6 @@ $(document).ready(function() {
 		goToFloor();
 		loadMap(iFloor);
 	});
-
-	for (var i = 1; i <= roomCount; i++) {
-		applyToRooms(i);
-	};
 
 	$(".closeButton").click(function() {
 		collapseSidebar();
