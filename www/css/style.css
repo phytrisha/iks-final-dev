@@ -31,7 +31,7 @@
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #7f7f7f;
-	z-index: 50;
+	z-index: 100;
 }
 
 .contentView {
@@ -44,7 +44,7 @@
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #7f7f7f;
-	z-index: 20;
+	z-index: 80;
 	-webkit-transition: left 0.5s;
 }
 
@@ -437,10 +437,10 @@ p {
 }
 
 .fixedTitle {
-	position: fixed;
+	position: absolute;
+	z-index: 200;
 	width: 903px;
 	background-color: #fff;
-	z-index: 60;
 }
 
 .fixedTitle > .programLabel {
@@ -721,7 +721,38 @@ p {
 	z-index: 5;
 }
 
+.roundLabel {
+	-webkit-transition: opacity 0.2s;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	margin-left: -10px;
+	margin-top: -10px;
+	position: absolute;	
+	opacity: 0;
+}
 
+.roundLabel.pgColor {
+	background-color: #1c93a7;
+}
+
+.roundLabel.igColor {
+	background-color: #a9bd38;
+}
+
+.roundLabel.kgColor {
+	background-color: #e48e13;
+}
+
+.roundLabel.iotColor {
+	background-color: #283178;
+}
+
+.roundLabel.sgColor {
+	background-color: #b548b1;
+}
 
 
 

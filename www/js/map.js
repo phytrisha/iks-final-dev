@@ -128,8 +128,15 @@ function loadMap (floor) {
 			} else {
 				$(".floorButtons").removeClass("bg");
 			}
-			var currentFontSize = Math.round( ((ev.scale * -7 + 1) + 35) * 10) / 10;
+			var currentFontSize = Math.round( ((ev.scale * -5 + 1) + 35) * 10) / 10;
 			$(".room > .roomLabel").css("font-size", currentFontSize + "px");
+			if (lastScale * endScale < 1) {
+				$(".room > .roomLabel").css("opacity", 0);
+				$(".room > .roundLabel").css("opacity", 1);
+			} else {
+				$(".room > .roomLabel").css("opacity", 1);
+				$(".room > .roundLabel").css("opacity", 0);
+			}
 		}
 	})
 

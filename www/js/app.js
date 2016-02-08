@@ -75,6 +75,7 @@ function placeRooms (data) {
 			var roomLabelContent = data[i].semester;
 			var labelColor = roomLabelContent[0].charAt(0) + roomLabelContent[0].charAt(1) + "Color";
 			$("#room" + j).html("<h1 class='roomLabel bold " + labelColor + "'>" + roomLabelContent + "</h1>");
+			$("#room" + j).append("<div class='roundLabel "+labelColor+"'></div>");
 			roomArray[i] = data[i].room;
 			semesterArray[i] = data[i].semester;	
 		}
