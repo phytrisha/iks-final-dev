@@ -85,6 +85,9 @@ function displayContent (content) {
 	$(".contentView").addClass("active");
 	var selectorMargin = window.screen.width - (max/2) * parseInt($(".semesterClick").css("height"));
 	$(".semesterSelector").css("margin-top", selectorMargin + "px");
+	console.log("the content is " + content);
+	console.log($(".contentView"));
+
 	addClicks();
 	addContent(content);
 }

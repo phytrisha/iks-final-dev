@@ -26,6 +26,7 @@ function setBuilding (building) {
 			for (var i = floorCount; i > 0; i--) {
 				$(".floorButtons").append("<div class='floorButton' id='switch"+ i + "'><h1>OG " + (i-1) + "</h1></div>");
 			};
+			console.log("setting building to rks");
 			break;
 		default:
 			// do another thing
@@ -35,7 +36,7 @@ function setBuilding (building) {
 		$(".floorButton").removeClass("active");
 		setFloor(parseInt(this.id.charAt(6)));
 		goToFloor();
-		loadMap(iFloor);
+		//loadMap(iFloor);
 	});
 	$(".closeButton").click(function() {
 		collapseSidebar();

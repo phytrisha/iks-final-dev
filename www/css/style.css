@@ -7,6 +7,7 @@
 	height: 1536px;
 	top: 0px;
 	left: 0px;
+	overflow: hidden;
 	position: absolute;
 }
 
@@ -84,6 +85,23 @@ img {
 
 .mapElement.active {
 	top: 658px; 
+}
+
+.mapElement.transtation#floor1,
+.mapElement.transtation#floor2,
+.mapElement.transtation#floor3,
+.mapElement.transtation#floor4 {
+	width: 982px;
+	height: 196px;
+}
+
+.mapElement.rks#floor1,
+.mapElement.rks#floor2,
+.mapElement.rks#floor3 {
+	top: -100px;
+	left:850px;
+	width: 1070px;
+	height: 909px;
 }
 
 .trainstation#floor1 {
@@ -502,7 +520,6 @@ p {
 ------------------------------------------ */
 
 .room {
-	background-color: rgba(0,255,0,0.1);
 	position: absolute;
 	z-index: 10;
 }
@@ -512,10 +529,9 @@ p {
 ------------------------------------------ */
 
 .popUp {
-	position: relative;
+	position: fixed;
 	width: 700px;
-	height: 379px;
-	z-index: 999;
+	z-index: 40;
 	background-color: rgba(255,255,255,0.95);
 	border-style: solid;
 	border-width: 1px;
@@ -694,7 +710,16 @@ p {
 	background-size: 100% 100%;
 }
 
-
+.room > .roomLabel {
+	-webkit-transition: font-size 0.2s;
+	-webkit-transition: opacity 0.2s;
+	text-transform: uppercase;
+	position: relative;
+	top: 50%;
+	margin-top: -14px;
+	text-align: center;
+	z-index: 5;
+}
 
 
 

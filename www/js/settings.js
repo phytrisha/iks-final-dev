@@ -2,17 +2,26 @@ $(document).ready(function() {
 	$(".settingsButton").click(function() {
 		$(".settingsButton").css("background-color", "#ffffff");
 		$(this).css("background-color", "rgba(0,0,0,0.05)");
+		console.log(this.id);
 		setBuilding(this.id);
 		populateFloors(floorCount);
 	})
 	$(".saveSettings").click(function() {
-		
-		placeRooms(roomData);
+		if (iBuilding == "B") {
+			placeRooms(roomDataB);
+		} else if (iBuilding == "H") {
+			placeRooms(roomDataH);
+		}
+		console.log(roomCount);
 		for (var i = 1; i <= roomCount; i++) {
-			//applyToRooms(i);
+			applyToRooms(i);
 		};
 		goToFloor();
-		loadMap(iFloor);
+		console.log(floorCount);
+		for (var i = 1; i <= floorCount; i++) {
+			loadMap(i);
+		};
+		//loadMap(iFloor);
 		$(".viewContainer").css("display", "initial");
 		$(".settingsContainer").html("");
 	})

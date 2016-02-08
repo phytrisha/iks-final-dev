@@ -48,6 +48,10 @@ function getBounding (elem) {
 }
 
 function bakeTransform (elem, scaleValue) {
+	//console.log(resultScale);
+	// reset scaling
+	$(elem).css("-webkit-transform", "scale(1.0)");
+
 	// calculate new dimensions after scaling
 	var newWidth = parseInt($(elem).css("width")) * scaleValue;
 	var newLeft = parseInt($(elem).css("left")) - ((newWidth - parseInt($(elem).css("width"))) * (xPercent/100));
@@ -59,14 +63,11 @@ function bakeTransform (elem, scaleValue) {
 	$(elem).css("top", newTop + "px");
 	$(elem).css("width", newWidth + "px");
 	$(elem).css("height", newHeight + "px");
-
-	// reset scaling
-	$("#floor" + iFloor).css("-webkit-transform", "scale(1.0)");
 }
 
 function loadMap (floor) {
-	var mapName = "floor" + iFloor;
-	console.log("iPad Floor is: " + iFloor);
+	var mapName = "floor" + floor;
+	console.log("iPad Floor is: " + floor);
 	var mapElement = document.getElementById(mapName);
 
 	var mapManager = new Hammer.Manager(mapElement);
@@ -79,19 +80,17 @@ function loadMap (floor) {
 
 	mapManager.add([tap, pinch, pan]);
 
-	mapManager.on("tap panstart", function() {
-		collapseSidebar();
-	})
-
 	mapManager.on("panstart", function() {
-		startX = parseInt($("#floor" + iFloor).css("left"));
-		startY = parseInt($("#floor" + iFloor).css("top"));
 		closePopUps();
+		collapseSidebar();
+		startX = parseInt($("#floor" + floor).css("left"));
+		startY = parseInt($("#floor" + floor).css("top"));
+		
 	})
 
 	mapManager.on("panmove", function(ev) {
-		appendTransform("#floor" + iFloor, ev.deltaX, ev.deltaY);
-		var mapDim = getBounding($("#floor" + iFloor));
+		appendTransform("#floor" + floor, ev.deltaX, ev.deltaY);
+		var mapDim = getBounding($("#floor" + floor));
 		if (mapDim[2] > 1928) {
 			$(".floorButtons").addClass("bg");
 		} else {
@@ -100,9 +99,9 @@ function loadMap (floor) {
 	})
 
 	mapManager.on("pinchstart", function(ev) {
-		lastScale = resultScale[iFloor-1];
+		lastScale = resultScale[floor-1];
 		closePopUps();
-		var values = getBounding("#floor" + iFloor);
+		var values = getBounding("#floor" + floor);
 		var xCenter = ev.center.x;
 		xCenter = xCenter.map(values[0], values[2], 0, 100);
 		xCenter = xCenter.clamp(0,100);
@@ -113,23 +112,24 @@ function loadMap (floor) {
 		xPercent = xCenter;
 		yPercent = yCenter;
 
-		$("#floor" + iFloor).css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
+		$("#floor" + floor).css("-webkit-transform-origin", xCenter + "%" + yCenter + "%");
 		scaling = true;
 	})
 
 	mapManager.on("pinchin pinchout", function(ev) {
 		if (scaling) {
 			endScale = ev.scale;
-			console.log("last scale: " + lastScale);
-			console.log("current scale: " + ev.scale);
-			scale("#floor" + iFloor, ev.scale);
-			var mapDim = getBounding($("#floor" + iFloor));
-			var borderValue = (mapDim[2]/2)*resultScale[iFloor-1]+mapDim[2]/2;
+
+			scale("#floor" + floor, ev.scale);
+			var mapDim = getBounding($("#floor" + floor));
+			var borderValue = (mapDim[2]/2)*resultScale[floor-1]+mapDim[2]/2;
 			if (borderValue > 1928) {
 				$(".floorButtons").addClass("bg");
 			} else {
 				$(".floorButtons").removeClass("bg");
 			}
+			var currentFontSize = Math.round( ((ev.scale * -7 + 1) + 35) * 10) / 10;
+			$(".room > .roomLabel").css("font-size", currentFontSize + "px");
 		}
 	})
 
@@ -137,9 +137,8 @@ function loadMap (floor) {
 		resultScale[iFloor-1] = lastScale * endScale;
 		bakeTransform("#floor" + iFloor, endScale);
 		var currentLocation = defineCurrentLocation();
-		fitToContainer();
-		//giveRoute(currentLocation, 3);
 		scaling = false;
+		$(".room > .roomLabel").css("font-size", "35px");
 	})
 }
 
@@ -181,7 +180,6 @@ function addPopUpClicks (type) {
 	var tap = new Hammer.Tap();
 	clickManager.add(tap);
 	clickManager.on("tap", function() {
-		console.log("clicked on info so show: " + type);
 		displayContent(type);
  	})
 }

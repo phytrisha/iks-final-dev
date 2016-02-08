@@ -1,6 +1,6 @@
 function giveRoomDimensions (input) {
 	var dimensions = [];
-	dimensions[0] = parseInt($("#room" + input).css("width")) / 2;
+	dimensions[0] = parseInt($("#room" + input).css("width"));
 	dimensions[1] = parseInt($("#room" + input).css("height"));
 	dimensions[2] = parseInt($("#room" + input).css("left"));
 	dimensions[3] = parseInt($("#room" + input).css("top"));
@@ -8,24 +8,37 @@ function giveRoomDimensions (input) {
 }
 
 function closePopUps () {
-	$(".room").html("");
+	$(".popUp").remove();
+	$(".room > .roomLabel").css("opacity", 1.0);
 }
 
 function generatePopup (semester, pos, num) {
 	closePopUps();
+	$("#room" + num + " > .roomLabel").css("opacity", 0.0);
 
+	var program = [];
+	var semesterNum = [];
 	var offset = getMapOffset();
+	
+	for (var i = 0; i < semester.length; i++) {
+		program[i] = semester[i].charAt(0) + semester[i].charAt(1);
+	};
 
-	var program = semester.charAt(0) + semester.charAt(1);
 	var semesterNum;
 	if (program != "io") {
-		semesterNum = semester.charAt(2);
+		for (var i = 0; i < semester.length; i++) {
+			semesterNum[i] = semester[i].charAt(2);
+		};
 	} else {
-		semesterNum = semester.charAt(3);
+		for (var i = 0; i < semester.length; i++) {
+			semesterNum[i] = semester[i].charAt(3);
+		};
 	}
+	console.log(semesterNum);
 	var fullName;
 	var shortName;
-	switch(program) {
+
+	switch(program[0]) {
 		case "kg":
 			fullName = "Kommunikationsgestaltung";
 			shortName = "KG";
@@ -48,59 +61,75 @@ function generatePopup (semester, pos, num) {
 			break;
 	}
 
-	var roomOffset = giveRoomDimensions(num);
-	//console.log("room height: " + roomOffset[1]);
-	//var lineHeight = 30 + (roomOffset[1] / 2);
+	var roomOffset = $(".room#room" + num).offset();
+	var roomDimensions = giveRoomDimensions(num);
 
-	var roomLeft = roomOffset[2];
-	var roomTop = roomOffset[3];
+	var roomCenterX = Math.round(roomOffset.left + roomDimensions[0] / 2);
+	var roomCenterY = Math.round(roomOffset.top + roomDimensions[1] / 2);
 
-	var popUpLeft = -350 + roomOffset[0];
-	var popUpTop = -419;
+	var resultingLeft = roomCenterX - 350;
+	var resultingTop = roomCenterY - 340 - 130 * program.length;
 
-	var mapLeft = parseInt($("#floor" + iFloor).css("left"));
-	var mapCalcTop = parseInt($("#floor" + iFloor).css("top"));
+	var lineHeight = 100;
+	var lineLeft = 350;
 
-	var resultingLeft;
-
-	resultingLeft = popUpLeft;
-
-	var leftOffset = 0;
-	var rightOffset = 0;
-	var topOffset = 0;
-	var lineHeight = 40 + (roomOffset[1] / 2);
-	if ((roomLeft+roomOffset[0] - 350) - (784 - mapLeft) < 40 )  {
-		leftOffset = (((roomLeft+roomOffset[0] - 350) - (784 - mapLeft)) * (-1) + 40);
-		resultingLeft+=leftOffset;
+	if (resultingTop < 40) {
+		var topOverset = resultingTop-40;
+		lineHeight = 100 + topOverset;
+		console.log("top overset: " + topOverset);
+		resultingTop = 40;
+	}
+	console.log(resultingLeft);
+	if (resultingLeft < 824) {
+		var leftOverset = resultingLeft - 824;
+		lineLeft = 350 + leftOverset;
+		resultingLeft = 824;
+	} else if (resultingLeft > 1292) {
+		var rightOverset = resultingLeft - 1292;
+		lineLeft = 350 + rightOverset;
+		resultingLeft = 1292;
 	}
 
-	if ((roomLeft+roomOffset[0] + 350) - (666 - mapLeft) > 1224 )  {
-		rightOffset = (roomLeft+roomOffset[0] + 350) - (666 - mapLeft) - 1224;
-		resultingLeft-=rightOffset;
-	}
+	$(".mapView").append("<div class='popUp'></div>");
 
-	if (((mapCalcTop + roomTop) + popUpTop) < 40) {
-		topOffset = ((mapCalcTop + roomTop) + popUpTop) * (-1) + 40;
-		lineHeight-=topOffset;
-		popUpTop += topOffset;
-	}
-
-	var resultingLeftLine = (350 + (leftOffset*(-1)) + rightOffset).clamp(40, 660);
-	$("#room" + num).append("<div class='popUp'></div>");
+	//console.log(roomDataH[num-1].rotation);
 	$(".popUp").css("left", resultingLeft + "px");
-	$(".popUp").css("top", popUpTop + "px");
+	$(".popUp").css("top", resultingTop + "px");
+	$(".popUp").css("height", 259 + 130 * program.length + "px");
 	$(".popUp").append("<div class='popUpTitle'></div>");
-	$(".popUpTitle").append("<h1 class='popUpVertCenter " + program + "Color bold floatLeft'>"+ shortName +"</h1>");
-	$(".popUpTitle").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>" + fullName + " " + semesterNum + "</h1>");
-	$(".popUp").append("<div class='popUpInfoButton' id='info" + semester + "'></div>");
-	$(".popUpInfoButton").append("<div class='popUpIcon' id='infoIcon'></div>");
-	$(".popUpInfoButton").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>Informationen zu " + shortName + " " + semesterNum + "</h1>");
+	$(".popUpTitle").append("<h1 class='popUpVertCenter " + program[0] + "Color bold floatLeft'>"+ shortName +"</h1>");
+	var semesterNumString = [];
+	for (var i = 0; i < semesterNum.length; i++) {
+		if ( i > 0 ) {
+			semesterNumString += "/";
+		}
+		semesterNumString += semesterNum[i];
+	};
+	$(".popUpTitle").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>" + fullName + " " + semesterNumString + "</h1>");
+	
+	console.log(semester);
+	for (var i = 0; i < semester.length; i++) {
+		$(".popUp").append("<div class='popUpInfoButton' id='info" + semester[i] + "'></div>");
+		$(".popUpInfoButton#info" + semester[i]).css("margin-top", 126 * (i+1) + "px");
+		$(".popUpInfoButton#info" + semester[i]).append("<div class='popUpIcon' id='infoIcon'></div>");
+		$(".popUpInfoButton#info" + semester[i]).append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>Informationen zu " + shortName + " " + semesterNum[i] + "</h1>");
+	};
+	
 	$(".popUp").append("<div class='popUpRouteButton'></div>");
-	$(".popUpRouteButton").append("<div class='popUpIcon' id='routeIcon'></div>");
-	$(".popUpRouteButton").append("<h1 class='popUpVertCenter popUpFullTitle popUpUnderline'>Route anzeigen</h1>");
-	$(".popUp").append("<div class='popUpLine'></div>");
-	$(".popUpLine").css("left", resultingLeftLine + "px");
-	$(".popUpLine").css("height", lineHeight + "px");
 
-	addPopUpClicks(semester);
+	$(".popUpRouteButton").css("margin-top", 126 + 126 * $(".popUpInfoButton").length + "px");
+	$(".popUpRouteButton").append("<div class='popUpIcon' id='routeIcon'></div>");
+	$(".popUpRouteButton").append("<h1 class='popUpVertCenter popUpFullTitle'>Route anzeigen</h1>");
+	$(".popUp").append("<div class='popUpLine'></div>");
+	$(".popUpLine").css("left", lineLeft + "px");
+	$(".popUpLine").css("height", lineHeight + "px");
+	/*if (iBuilding == "H") {
+		if (roomDataH[num-1].rotation != "0") {
+			$(".popUp").css("-webkit-transform-origin", "350px " + (379 + lineHeight) + "px");
+			$(".popUp").css("-webkit-transform", "rotate(" + (parseInt(roomDataH[num-1].rotation) * -1) + "deg)")
+		}
+	}*/
+	for (var i = 0; i < semester.length; i++) {
+		addPopUpClicks(semester[i]);
+	};
 }
